@@ -179,7 +179,23 @@ We continuously improve performance and efficiency.
 </div>
 
 </section>
+<section class="contact-section">
 
+    <h2>Get Your Free AI Consultation</h2>
+
+    <form method="POST" class="contact-form">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn">
+            Submit
+        </button>
+
+    </form>
+
+</section>
 <footer>
 
 © 2026 Mindrizz AI Solutions
