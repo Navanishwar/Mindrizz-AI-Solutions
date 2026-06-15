@@ -1,3 +1,4 @@
+{% block active_services %}active{% endblock %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -30,11 +31,13 @@
 Mindrizz AI
 </div>
 
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Services</a></li>
+<ul class="nav-links">
+
+<li><a href="/">Home</a></li>
+<li><a href="/services">Services</a></li>
 <li><a href="#">About</a></li>
-<li><a href="#">Contact</a></li>
+<li><a href="/contact">Contact</a></li>
+
 </ul>
 
 </nav>
@@ -44,38 +47,48 @@ Mindrizz AI
 <div class="hero-left">
 
 <h1>
-<span class="gradient">Mindrizz AI Solutions</span>
+<span class="gradient">AI Consulting &
+Automation Solutions</span>
 </h1>
 
 <p>
 Helping businesses automate operations,
-reduce costs and scale faster using
-Artificial Intelligence.
+reduce costs, and scale faster with AI.
 </p>
 
-<div class="hero-buttons">
-
-<button class="btn">
-Book Consultation
-</button>
-
-<button class="btn secondary-btn">
-Our Services
-</button>
-
 </div>
-
-</div>
-
 <div class="hero-right">
 
-<div class="globe-container">
+    <div class="infinity-container">
 
-🌐
+        <div class="infinity-wrap">
+            <div class="orb-trail"></div>
+
+            <svg 
+            viewBox="0 0 600 300" 
+            width="600" 
+            height="300"
+            class="infinity-path">
+
+                <path
+                id="infinityCurve"
+                d="M150,150
+                C150,70 250,70 300,150
+                C350,230 450,230 450,150
+                C450,70 350,70 300,150
+                C250,230 150,230 150,150"
+                />
+
+            </svg>
+
+            <div class="orb"></div>
+
+        </div>
+
+    </div>
 
 </div>
 
-</div>
 </section>
 
 <section class="services">
@@ -179,41 +192,7 @@ We continuously improve performance and efficiency.
 </div>
 
 </section>
-<section class="contact-section">
 
-    <h2>Get Your Free AI Consultation</h2>
-    
-    {% if success %}
-
-<div class="success-message">
-
-    ✅ Thank You!
-
-    <br><br>
-
-    Your consultation request has been submitted successfully.
-
-    <br>
-
-    Our team will contact you shortly.
-
-</div>
-
-{% endif %}
-
-    <form method="POST" class="contact-form">
-
-        {% csrf_token %}
-
-        {{ form.as_p }}
-
-        <button type="submit" class="btn">
-            Submit
-        </button>
-
-    </form>
-
-</section>
 <footer>
 
 © 2026 Mindrizz AI Solutions

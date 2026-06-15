@@ -1,7 +1,16 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .forms import LeadForm
 
+
 def home(request):
+
+    return render(
+        request,
+        'home.html'
+    )
+
+
+def contact(request):
 
     success = False
 
@@ -23,9 +32,21 @@ def home(request):
 
     return render(
         request,
-        'home.html',
+        'contact.html',
         {
             'form': form,
             'success': success
         }
+    )
+def services(request):
+
+    return render(
+        request,
+        'services.html'
+    )
+def about(request):
+
+    return render(
+        request,
+        'about.html'
     )
