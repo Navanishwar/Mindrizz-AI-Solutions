@@ -182,6 +182,24 @@ We continuously improve performance and efficiency.
 <section class="contact-section">
 
     <h2>Get Your Free AI Consultation</h2>
+    
+    {% if success %}
+
+<div class="success-message">
+
+    ✅ Thank You!
+
+    <br><br>
+
+    Your consultation request has been submitted successfully.
+
+    <br>
+
+    Our team will contact you shortly.
+
+</div>
+
+{% endif %}
 
     <form method="POST" class="contact-form">
 

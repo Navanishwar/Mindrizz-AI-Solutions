@@ -3,6 +3,8 @@ from .forms import LeadForm
 
 def home(request):
 
+    success = False
+
     if request.method == 'POST':
 
         form = LeadForm(request.POST)
@@ -11,7 +13,9 @@ def home(request):
 
             form.save()
 
-            return redirect('/')
+            form = LeadForm()
+
+            success = True
 
     else:
 
@@ -20,5 +24,8 @@ def home(request):
     return render(
         request,
         'home.html',
-        {'form': form}
+        {
+            'form': form,
+            'success': success
+        }
     )

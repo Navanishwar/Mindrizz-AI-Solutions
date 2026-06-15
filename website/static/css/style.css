@@ -377,13 +377,41 @@ gap:20px;
 
 .contact-form input,
 .contact-form textarea{
+
 width:100%;
-padding:15px;
-border-radius:10px;
-border:none;
-background:rgba(255,255,255,0.08);
+
+padding:18px;
+
+border-radius:12px;
+
+border:1px solid rgba(0,245,255,0.25);
+
+background:rgba(255,255,255,0.05);
+
 color:white;
+
 font-size:16px;
+
+outline:none;
+
+transition:0.3s;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+border-color:#00F5FF;
+
+box-shadow:0 0 20px rgba(0,245,255,0.35);
+
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+
+color:rgba(255,255,255,0.6);
+
 }
 
 .contact-form textarea{
