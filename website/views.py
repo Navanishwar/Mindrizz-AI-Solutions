@@ -25,52 +25,54 @@ def contact(request):
 
             from django.core.mail import send_mail
 
-        message = render_to_string(
-                'emails/leads_notification.txt',
+            message = render_to_string(
+                    'emails/leads_notification.txt',
+                    {
+                        'lead': lead
+                    }
+            )
+
+            send_mail(
+                subject='🚀 New Lead - MindRizz',
+                message=message,
+                from_email=None,
+                recipient_list=['navaneshwarreddy1614@gmail.com'],
+                fail_silently=True,
+            )
+
+            auto_reply = render_to_string(
+                'emails/auto-reply.txt',
                 {
                     'lead': lead
                 }
-        )
+            )
 
-        send_mail(
-            subject='🚀 New Lead - MindRizz',
-            message=message,
-            from_email=None,
-            recipient_list=['navaneshwarreddy1614@gmail.com'],
-            fail_silently=False,
-        )
+            send_mail(
+                subject='Thank you for contacting MindRizz',
+                message=auto_reply,
+                from_email=None,
+                recipient_list=[lead.email],
+                fail_silently=True,
+            )
 
-        auto_reply = render_to_string(
-            'emails/auto-reply.txt',
+            form = LeadForm()
+
+            success = True
+
+        else:
+
+            form = LeadForm()
+
+
+        return render(
+            request,
+            'contact.html',
             {
-                'lead': lead
+                'form': form,
+                'success': success
             }
         )
-
-        send_mail(
-            subject='Thank you for contacting MindRizz',
-            message=auto_reply,
-            from_email=None,
-            recipient_list=[lead.email],
-            fail_silently=False,
-        )
-
-        form = LeadForm()
-
-        success = True
-
-    else:
-
-        form = LeadForm()
-
-    return render(
-        request,
-        'contact.html',
-        {
-            'form': form,
-            'success': success
-        }
-    )
+    
 def services(request):
 
     return render(
