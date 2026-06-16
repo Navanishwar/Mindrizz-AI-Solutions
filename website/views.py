@@ -26,10 +26,10 @@ def contact(request):
             from django.core.mail import send_mail
 
             message = render_to_string(
-                    'emails/leads_notification.txt',
-                    {
-                        'lead': lead
-                    }
+                'emails/leads_notification.txt',
+                {
+                    'lead': lead
+                }
             )
 
             send_mail(
@@ -59,20 +59,18 @@ def contact(request):
 
             success = True
 
-        else:
+    else:
 
-            form = LeadForm()
+        form = LeadForm()
 
-
-        return render(
-            request,
-            'contact.html',
-            {
-                'form': form,
-                'success': success
-            }
-        )
-    
+    return render(
+        request,
+        'contact.html',
+        {
+            'form': form,
+            'success': success
+        }
+    )
 def services(request):
 
     return render(
