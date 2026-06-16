@@ -20,11 +20,36 @@ def contact(request):
 
         if form.is_valid():
 
-            form.save()
+            lead = form.save()
 
-            form = LeadForm()
+            from django.core.mail import send_mail
 
-            success = True
+            send_mail(
+                subject='🚀 New Lead - MindRizz',
+                message=f"""
+        New Lead Received
+
+        Name: {lead.name}
+
+        Email: {lead.email}
+
+        Phone: {lead.phone}
+
+        Company: {lead.company}
+
+        Requirement:
+
+        {lead.requirement}
+
+            """,
+            from_email=None,
+            recipient_list=['navaneshwarreddy1614@gmail.com'],
+            fail_silently=False,
+            )   
+
+        form = LeadForm()
+
+        success = True
 
     else:
 

@@ -27,62 +27,66 @@
 
 
 <section class="contact-section">
-    <div class="contact-container">
+    <div class="contact-card">
         <h2>Let's Build Something Intelligent</h2>
         <p class="contact-subtitle">
             Have a project in mind? Let's discuss how we can leverage AI to transform your business.
         </p>
-        <span>✓ Free Consultation</span>
+        <div class="contact-benefits">
 
-        <span>✓ Custom AI Strategy</span>
+            <span>✓ Free Consultation</span>
 
-        <span>✓ Fast Response</span>
-    <form method="POST" class="contact-form">
+            <span>✓ Custom AI Strategy</span>
 
-        {% csrf_token %}
+            <span>✓ Fast Response</span>
 
-        <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        required
-        >
+        </div>
+        <form method="POST" class="contact-form">
 
-        <input
-        type="email"
-        name="email"
-        placeholder="Business Email"
-        required
-        >
+            {% csrf_token %}
 
-        <input
-        type="text"
-        name="phone"
-        placeholder="Phone Number"
-        required
-        >
+            <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            >
 
-        <input
-        type="text"
-        name="company"
-        placeholder="Company Name"
-        required
-        >
+            <input
+            type="email"
+            name="email"
+            placeholder="Business Email"
+            required
+            >
 
-        <textarea
-        name="requirement"
-        rows="6"
-        placeholder="Tell us about your automation goals, challenges, or project requirements..."
-        required
-        ></textarea>
+            <input
+            type="text"
+            name="phone"
+            placeholder="Phone Number"
+            required
+            >
 
-        <button type="submit" class="btn">
+            <input
+            type="text"
+            name="company"
+            placeholder="Company Name"
+            required
+            >
 
-        Book Free Consultation
+            <textarea
+            name="requirement"
+            rows="6"
+            placeholder="Tell us about your automation goals, challenges, or project requirements..."
+            required
+            ></textarea>
 
-        </button>
+            <button type="submit" class="btn">
 
-    </form>
+            Book Free Consultation
+
+            </button>
+
+        </form>
 </div>
 
 </section>
