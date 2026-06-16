@@ -28,15 +28,15 @@
 <nav>
 
 <div class="logo">
-Mindrizz AI
+MindRizz
 </div>
 
 <ul class="nav-links">
 
-<li><a href="/">Home</a></li>
-<li><a href="/services">Services</a></li>
-<li><a href="#">About</a></li>
-<li><a href="/contact">Contact</a></li>
+<li><a href="{% url 'home' %}">Home</a></li>
+<li><a href="{% url 'services' %}">Services</a></li>
+<li><a href="{% url 'about' %}">About</a></li>
+<li><a href="{% url 'contact' %}">Contact</a></li>
 
 </ul>
 
@@ -113,29 +113,39 @@ Streamline operations, eliminate repetitive work, and scale your business with i
 <section class="services">
 <section class="why-us">
 
-<h2>Why Choose Mindrizz?</h2>
-
+<h2>Why Businesses Choose Mindrizz</h2>
+<p class="section-subtitle">
+Helping businesses reduce operational costs,
+increase efficiency, and scale with AI-powered automation.
+</p>
 <div class="why-grid">
-
 <div class="why-card">
-<h3>Automation First</h3>
-<p>
-We eliminate repetitive work and streamline business operations.
-</p>
+
+    <span class="card-number">01</span>
+
+    <h3>Automation First</h3>
+
+    <p>
+    We eliminate repetitive work and streamline business operations.
+    </p>
+
 </div>
 
 <div class="why-card">
-<h3>AI Expertise</h3>
-<p>
-Custom AI solutions tailored to your business requirements.
-</p>
+    <span class="card-number">02</span>
+
+    <h3>AI Expertise</h3>
+    <p>
+    Custom AI solutions tailored to your business requirements.
+    </p>
 </div>
 
 <div class="why-card">
-<h3>Fast Deployment</h3>
-<p>
-From idea to implementation in weeks, not months.
-</p>
+    <span class="card-number">03</span>
+    <h3>Fast Deployment</h3>
+    <p>
+        From idea to implementation in weeks, not months.
+    </p>
 </div>
 
 </div>
@@ -143,36 +153,40 @@ From idea to implementation in weeks, not months.
 </section>
 <section class="process">
 
-<h2>How We Work</h2>
-
+<h2>Our Process</h2>
+<p class= "section-subtitle">A structured approach that takes your business from manual operations to intelligent automation.</p>
 <div class="process-grid">
 
 <div class="process-card">
-<h3>1. Discovery</h3>
-<p>
-We analyze your current workflows and identify automation opportunities.
-</p>
+    <span class="card-number">01</span>
+    <h3>Discovery</h3>
+    <p>
+    We analyze your current workflows and identify automation opportunities.
+    </p>
 </div>
 
 <div class="process-card">
-<h3>2. Strategy</h3>
-<p>
-We design a custom AI automation roadmap for your business.
-</p>
+    <span class="card-number">02</span>
+    <h3>Strategy</h3>
+    <p>         
+    We design a custom AI automation roadmap for your business.
+    </p>
 </div>
 
 <div class="process-card">
-<h3>3. Implementation</h3>
-<p>
-We build and deploy the solution with minimal disruption.
-</p>
+    <span class="card-number">03</span>
+    <h3>Implementation</h3>
+    <p>             
+        We build and deploy the solution with minimal disruption.
+    </p>
 </div>
 
 <div class="process-card">
-<h3>4. Optimization</h3>
-<p>
-We continuously improve performance and efficiency.
-</p>
+    <span class="card-number">04</span>
+    <h3>Optimization</h3>
+    <p>
+    We continuously improve performance and efficiency.
+    </p>
 </div>
 
 </div>
@@ -181,31 +195,39 @@ We continuously improve performance and efficiency.
 <section class="industries">
 
 <h2>Industries We Serve</h2>
-
+<p class="section-subtitle">
+Helping organizations across industries automate operations and unlock growth through AI.
+</p>
 <div class="industry-grid">
 
 <div class="industry-card manufacturing">
-<h3>🏭 Manufacturing</h3>
+<div class="industry-icon">🏭</div>
+    <h3> Manufacturing</h3>
 </div>
 
 <div class="industry-card retail">
-<h3>🛒 Retail</h3>
+<div class="industry-icon">🛒</div>
+    <h3> Retail</h3>
 </div>
 
 <div class="industry-card healthcare">
-<h3>🏥 Healthcare</h3>
+<div class="industry-icon">🏥</div>
+    <h3> Healthcare</h3>
 </div>
 
 <div class="industry-card finance">
-<h3>💰 Finance</h3>
+<div class="industry-icon">💰</div>
+    <h3> Finance</h3>
 </div>
 
 <div class="industry-card education">
-<h3>🎓 Education</h3>
+<div class="industry-icon">🎓</div>
+    <h3> Education</h3>
 </div>
 
 <div class="industry-card logistics">
-<h3>🚚 Logistics</h3>
+<div class="industry-icon">🚚</div>
+    <h3> Logistics</h3>
 </div>
 
 </div>
