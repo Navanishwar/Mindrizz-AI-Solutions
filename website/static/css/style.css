@@ -5,16 +5,51 @@
 ===================================================== */
 :root{
 
+    /* Brand Colors */
+
     --primary:#00f5ff;
     --secondary:#7b61ff;
 
+    --heading-gradient: linear-gradient(
+        90deg,
+        #00E5FF,
+        #38BDF8,
+        #8B5CF6
+    );
+
+    --brand-gradient:linear-gradient(
+        90deg,
+        #00f5ff,
+        #7b61ff
+    );
+    /* Backgrounds */
+
     --bg:#050816;
-
-    --text:white;
-
     --glass:rgba(255,255,255,0.05);
 
+    /* Card System */
+
+    --card-bg:rgba(255,255,255,0.03);
+    --card-border:rgba(255,255,255,0.08);
+
+    /* Effects */
+
+    --glass-blur:12px;
+    --transition:all .35s ease;
+    /* Text */
+
+    --text:#ffffff;
+    --text-muted:rgba(255,255,255,0.75);
+
+    /* Borders */
+
     --border:rgba(255,255,255,0.08);
+
+    /* Radius */
+
+    --radius-lg:24px;
+    --radius-md:20px;
+    --radius-sm:12px;
 
 }
 /* =====================================================
@@ -33,9 +68,9 @@ font-family:Segoe UI,sans-serif;
 }
 
 body{
-background:#050816;
-color:white;
-overflow-x:hidden;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
 }
 
 .gradient{
@@ -519,7 +554,7 @@ z-index:-1;
 
     line-height:1;
 
-    transition:all .35s ease;
+    transition:var(--transition);
 
 }
 
@@ -606,12 +641,7 @@ z-index:-1;
 
     font-weight:700;
 
-    background:linear-gradient(
-    90deg,
-    #00E5FF,
-    #38BDF8,
-    #8B5CF6
-    );
+    background:var(--heading-gradient);
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -631,17 +661,17 @@ z-index:-1;
 
     overflow:hidden;
 
-    background:rgba(255,255,255,0.03);
+    background:var(--card-bg);
 
     padding:40px;
 
     min-height:260px;
 
-    border-radius:24px;
+    border-radius:var(--radius-lg);
 
     backdrop-filter:blur(10px);
 
-    transition:all .35s ease;
+    transition:var(--transition);
 }
 
 .why-card::before{
@@ -674,7 +704,7 @@ z-index:-1;
 
     color:white;
 
-    transition:all .35s ease;
+    transition:var(--transition);
 
 }
 
@@ -694,7 +724,7 @@ z-index:-1;
     0 15px 40px rgba(0,229,255,.08),
     0 15px 60px rgba(139,92,246,.08);
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid var(--card-border);
 
 }
 
@@ -752,12 +782,7 @@ z-index:-1;
 
     font-weight:700;
 
-    background:linear-gradient(
-    90deg,
-    #00E5FF,
-    #38BDF8,
-    #8B5CF6
-    );
+    background:var(--heading-gradient);
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -786,17 +811,17 @@ z-index:-1;
 
     overflow:hidden;
 
-    background:rgba(255,255,255,0.03);
+    background:var(--card-bg);
 
     padding:40px;
 
     min-height:260px;
 
-    border-radius:24px;
+    border-radius:var(--radius-lg);
 
     backdrop-filter:blur(10px);
 
-    transition:all .35s ease;
+    transition:var(--transition);
 
 }
 
@@ -850,7 +875,7 @@ z-index:-1;
     0 15px 40px rgba(0,229,255,.08),
     0 15px 60px rgba(139,92,246,.08);
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid var(--card-border);
 
 }
 
@@ -912,12 +937,7 @@ z-index:-1;
 
     font-weight:700;
 
-    background:linear-gradient(
-    90deg,
-    #00E5FF,
-    #38BDF8,
-    #8B5CF6
-    );
+    background:var(--heading-gradient);
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -942,19 +962,19 @@ z-index:-1;
 
 .industry-card{
 
-    background:rgba(255,255,255,.03);
+    background:var(--card-bg);
 
     padding:30px;
 
-    border-radius:24px;
+    border-radius:var(--radius-lg);
 
     text-align:center;
 
     backdrop-filter:blur(10px);
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid var(--card-border);
 
-    transition:all .35s ease;
+    transition:var(--transition);
 
     min-height:160px;
 
@@ -1049,12 +1069,7 @@ z-index:-1;
 
 .services-page h1{
 
-    background:linear-gradient(
-
-        90deg,
-        #00f5ff,
-        #7b61ff
-    );
+    background:var(--brand-gradient);
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -1173,7 +1188,7 @@ z-index:-1;
 .deliverable{
     background:rgba(255,255,255,0.04);
     padding:35px;
-    border-radius:24px;
+    border-radius:var(--radius-lg);
     border:1px solid rgba(255,255,255,0.08);
 }
 
@@ -1248,11 +1263,7 @@ z-index:-1;
 .about-page h1{
     font-size:4rem;
 
-    background:linear-gradient(
-    90deg,
-    #00f5ff,
-    #7b61ff
-    );
+    background:var(--brand-gradient);
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -1298,7 +1309,7 @@ z-index:-1;
 
     padding:35px;
 
-    border-radius:24px;
+    border-radius:var(--radius-lg);
 
     border:1px solid rgba(255,255,255,0.08);
 
@@ -1419,7 +1430,7 @@ z-index:-1;
 
     padding:60px;
 
-    background:rgba(255,255,255,0.03);
+    background:var(--card-bg);
 
     border:1px solid rgba(0,245,255,0.15);
 
@@ -1488,12 +1499,7 @@ overflow:hidden;
 
     font-weight:700;
 
-    background:linear-gradient(
-    90deg,
-    #00E5FF,
-    #38BDF8,
-    #8B5CF6
-    );
+    background:var(--heading-gradient);
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -1701,7 +1707,7 @@ overflow:hidden;
 
     color:white;
 
-    border-radius:24px;
+    border-radius:var(--radius-lg);
 
     border:1px solid rgba(0,245,255,0.35);
 

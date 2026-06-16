@@ -1,0 +1,35 @@
+<nav>
+
+    <div class="logo">
+        MindRizz
+    </div>
+
+    <ul class="nav-links">
+
+    <li>
+    <a href="/" class="{% if request.path == '/' %}active{% endif %}">
+    Home
+    </a>
+    </li>
+
+    <li>
+    <a href="/services/" class="{% if 'services' in request.path %}active{% endif %}">
+    Services
+    </a>
+    </li>
+
+    <li>
+    <a href="/about/" class="{% if 'about' in request.path %}active{% endif %}">
+    About
+    </a>
+    </li>
+
+    <li>
+    <a href="/contact/" class="{% if 'contact' in request.path %}active{% endif %}">
+    Contact
+    </a>
+    </li>
+
+    </ul>
+
+</nav>

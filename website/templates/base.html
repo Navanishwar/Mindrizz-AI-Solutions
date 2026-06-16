@@ -24,60 +24,12 @@
     <span></span>
 </div>
 
-<nav>
-
-    <div class="logo">
-        MindRizz
-    </div>
-
-    <ul class="nav-links">
-
-    <li>
-<a href="/" class="{% if request.path == '/' %}active{% endif %}">
-Home
-</a>
-</li>
-
-<li>
-<a href="/services/" class="{% if 'services' in request.path %}active{% endif %}">
-Services
-</a>
-</li>
-
-<li>
-<a href="/about/" class="{% if 'about' in request.path %}active{% endif %}">
-About
-</a>
-</li>
-
-<li>
-<a href="/contact/" class="{% if 'contact' in request.path %}active{% endif %}">
-Contact
-</a>
-</li>
-
-</ul>
-
-</nav>
+{% include 'partials/navbar.html' %}
 
 {% block content %}
 {% endblock %}
 
-<footer>
-
-    <div class="footer-logo">
-    MindRizz
-    </div>
-
-    <p>
-    AI Automation • Business Intelligence • Digital Transformation
-    </p>
-
-    <p>
-    © 2026 MindRizz AI Solutions
-    </p>
-
-</footer>
+{% include 'partials/footer.html' %}
 
 <script src="{% static 'js/main.js' %}"></script>
 
