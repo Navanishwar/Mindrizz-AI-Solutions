@@ -1,47 +1,8 @@
-{% block active_services %}active{% endblock %}
+{% extends 'base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mindrizz AI Solutions</title>
-
-<style>
-
-</style>
-
-</head>
-
-<body>
-<!--<div class="particles">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>"""-->
-
-<nav>
-
-<div class="logo">
-MindRizz
-</div>
-
-<ul class="nav-links">
-
-<li><a href="{% url 'home' %}">Home</a></li>
-<li><a href="{% url 'services' %}">Services</a></li>
-<li><a href="{% url 'about' %}">About</a></li>
-<li><a href="{% url 'contact' %}">Contact</a></li>
-
-</ul>
-
-</nav>
-
+{% block content %}
 <section class="hero">
 
 <div class="hero-left">
@@ -234,24 +195,4 @@ Helping organizations across industries automate operations and unlock growth th
 
 </section>
 
-<footer>
-
-    <div class="footer-logo">
-    MindRizz
-    </div>
-
-    <p>
-    AI Automation • Business Intelligence • Digital Transformation
-    </p>
-
-    <p>
-    © 2026 MindRizz AI Solutions
-    </p>
-
-</footer>
-
-<script src="{% static 'js/main.js' %}"></script>
-
-</body>
-
-</html>
+{% endblock %}

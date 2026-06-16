@@ -1,0 +1,13 @@
+New Lead Received
+
+Name: {{ lead.name }}
+
+Email: {{ lead.email }}
+
+Phone: {{ lead.phone }}
+
+Company: {{ lead.company }}
+
+Requirement:
+
+{{ lead.requirement }}

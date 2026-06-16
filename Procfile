@@ -1,0 +1,1 @@
+web: gunicorn mindrizz_site.wsgi
