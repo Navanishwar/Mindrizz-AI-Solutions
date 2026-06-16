@@ -15,10 +15,9 @@
             A member of our team will contact you shortly.
         </p>
 
-        <button class="btn">
-            Got It
+        <button type="button" class="btn close-modal">
+        Got It
         </button>
-
     </div>
 
 </div>
@@ -28,55 +27,63 @@
 
 
 <section class="contact-section">
+    <div class="contact-container">
+        <h2>Let's Build Something Intelligent</h2>
+        <p class="contact-subtitle">
+            Have a project in mind? Let's discuss how we can leverage AI to transform your business.
+        </p>
+        <span>✓ Free Consultation</span>
 
-<h2>How Can We Help You?</h2>
+        <span>✓ Custom AI Strategy</span>
 
-<form method="POST" class="contact-form">
+        <span>✓ Fast Response</span>
+    <form method="POST" class="contact-form">
 
-{% csrf_token %}
+        {% csrf_token %}
 
-<input
-type="text"
-name="name"
-placeholder="Your Name"
-required
->
+        <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        >
 
-<input
-type="email"
-name="email"
-placeholder="Business Email"
-required
->
+        <input
+        type="email"
+        name="email"
+        placeholder="Business Email"
+        required
+        >
 
-<input
-type="text"
-name="phone"
-placeholder="Phone Number"
-required
->
+        <input
+        type="text"
+        name="phone"
+        placeholder="Phone Number"
+        required
+        >
 
-<input
-type="text"
-name="company"
-placeholder="Company Name"
-required
->
+        <input
+        type="text"
+        name="company"
+        placeholder="Company Name"
+        required
+        >
 
-<textarea
-name="requirement"
-rows="6"
-placeholder="Tell us about your automation goals, challenges, or project requirements..."
-required
-></textarea>
+        <textarea
+        name="requirement"
+        rows="6"
+        placeholder="Tell us about your automation goals, challenges, or project requirements..."
+        required
+        ></textarea>
 
-<button type="submit" class="btn">
+        <button type="submit" class="btn">
 
-Submit Request
+        Book Free Consultation
 
-</button>
+        </button>
 
-</form>
+    </form>
+</div>
 
 </section>
 

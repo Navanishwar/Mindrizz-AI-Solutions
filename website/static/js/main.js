@@ -1,8 +1,9 @@
-console.log("Version 2.0");
-console.log("Mindrizz AI Loaded");
+console.log("Version 2.1");
+console.log("MindRizz Loaded");
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    // Button Hover Effect
     const button = document.querySelector(".btn");
 
     if(button){
@@ -17,40 +18,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-});
+    // Success Modal Button
+    const closeBtn = document.querySelector(".close-modal");
 
+    if(closeBtn){
 
-const path = document.getElementById("infinityCurve");
-const orb = document.querySelector(".orb");
+        closeBtn.addEventListener("click", () => {
 
+            // Redirect Home
+            window.location.href = "/";
 
-console.log(path);
+        });
 
-const length = path.getTotalLength();
-
-console.log(length);
-
-let progress = 0;
-
-
-function animateOrb(){
-
-    const point = path.getPointAtLength(progress);
-
-    // Move Orb
-    orb.style.left = (point.x - 7) + "px";
-    orb.style.top = (point.y - 7) + "px";
-
-    // Move forward
-    progress += 0.88;
-
-    // Loop
-    if(progress >= length){
-        progress = 0;
     }
 
-    requestAnimationFrame(animateOrb);
+    // Infinity Animation (Home Page Only)
+    const path = document.getElementById("infinityCurve");
+    const orb = document.querySelector(".orb");
 
-}
+    if(path && orb){
 
-animateOrb();
+        console.log("Infinity Animation Loaded");
+
+        const length = path.getTotalLength();
+
+        let progress = 0;
+
+        function animateOrb(){
+
+            const point = path.getPointAtLength(progress);
+
+            orb.style.left = (point.x - 7) + "px";
+            orb.style.top = (point.y - 7) + "px";
+
+            progress += 0.88;
+
+            if(progress >= length){
+                progress = 0;
+            }
+
+            requestAnimationFrame(animateOrb);
+        }
+
+        animateOrb();
+
+    }
+
+});

@@ -715,7 +715,7 @@ box-shadow:0 0 25px rgba(255,140,0,0.15);
 }
 .contact-section{
 
-padding:80px 8%;
+padding:60px 8% 100px;
 
 max-width:1200px;
 
@@ -723,13 +723,89 @@ margin:auto;
 
 }
 
+.contact-container{
 
-.contact-section h2{
-text-align:center;
-font-size:4rem;
-margin-bottom:25px;
+max-width:950px;
+
+margin:0 auto;
+
+padding:60px;
+
+background:rgba(255,255,255,.03);
+
+border-top:2px solid rgba(0,229,255,.35);
+
+border-radius:30px;
+
+backdrop-filter:blur(12px);
+
+position:relative;
+
+overflow:hidden;
+
+}
+.contact-container::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+background:radial-gradient(
+circle,
+rgba(139,92,246,.08),
+transparent 70%
+);
+
+filter:blur(70px);
+
+pointer-events:none;
+
 }
 
+.contact-section h2{
+
+text-align:center;
+
+font-size:3.5rem;
+
+font-weight:700;
+
+background:linear-gradient(
+90deg,
+#00E5FF,
+#38BDF8,
+#8B5CF6
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+margin-bottom:20px;
+
+}
+.contact-subtitle{
+
+text-align:center;
+
+max-width:700px;
+
+margin:0 auto 50px;
+
+line-height:1.8;
+
+font-size:1.1rem;
+
+color:rgba(255,255,255,.75);
+
+}
 .contact-form{
 
 max-width:900px;
@@ -749,7 +825,7 @@ gap:20px;
 
 width:100%;
 
-padding:18px;
+padding:20px;
 
 border-radius:12px;
 
@@ -760,6 +836,8 @@ background:rgba(255,255,255,0.05);
 color:white;
 
 font-size:16px;
+
+font-family:inherit;
 
 outline:none;
 
@@ -772,7 +850,9 @@ transition:0.3s;
 
 border-color:#00F5FF;
 
-box-shadow:0 0 20px rgba(0,245,255,0.35);
+box-shadow:
+0 0 20px rgba(0,229,255,.15),
+0 0 40px rgba(139,92,246,.12);
 
 }
 
@@ -786,6 +866,42 @@ color:rgba(255,255,255,0.6);
 .contact-form textarea{
 min-height:150px;
 resize:vertical;
+}
+.contact-highlights{
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+margin-bottom:40px;
+
+flex-wrap:wrap;
+
+}
+
+.contact-highlights span{
+
+color:rgba(255,255,255,.8);
+
+font-size:.95rem;
+
+}
+.contact-form .btn{
+
+width:100%;
+
+padding:22px;
+
+font-size:1.1rem;
+
+font-weight:700;
+
+border-radius:14px;
+
+margin-top:10px;
+
 }
 @media (max-width: 768px){
 
