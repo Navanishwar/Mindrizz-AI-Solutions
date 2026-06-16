@@ -1,52 +1,56 @@
+console.log("Version 2.0");
 console.log("Mindrizz AI Loaded");
 
 document.addEventListener("DOMContentLoaded", () => {
 
-const button = document.querySelector(".btn");
+    const button = document.querySelector(".btn");
 
-if(button){
+    if(button){
 
-    button.addEventListener("mouseenter", () => {
+        button.addEventListener("mouseenter", () => {
+            button.style.transform = "scale(1.08)";
+        });
 
-        button.style.transform = "scale(1.08)";
+        button.addEventListener("mouseleave", () => {
+            button.style.transform = "scale(1)";
+        });
 
-    });
-
-    button.addEventListener("mouseleave", () => {
-
-        button.style.transform = "scale(1)";
-
-    });
-
-}
+    }
 
 });
-console.log(document.getElementById("infinityCurve"));
+
+
 const path = document.getElementById("infinityCurve");
 const orb = document.querySelector(".orb");
 
-let progress = 0;
+
+console.log(path);
+
 const length = path.getTotalLength();
-console.log(path.getTotalLength());
+
+console.log(length);
+
+let progress = 0;
+
+
 function animateOrb(){
 
     const point = path.getPointAtLength(progress);
 
-    orb.style.left = (point.x - 24) + "px";
-    orb.style.top  = (point.y - 24) + "px";
-    const trail =
-    document.querySelector(".orb-trail");
+    // Move Orb
+    orb.style.left = (point.x - 7) + "px";
+    orb.style.top = (point.y - 7) + "px";
 
-    trail.style.transform =
-    `translate(${point.x - 90}px, ${point.y - 8}px)`;
+    // Move forward
+    progress += 0.88;
 
-    progress += 2;
-
+    // Loop
     if(progress >= length){
         progress = 0;
     }
 
     requestAnimationFrame(animateOrb);
+
 }
 
 animateOrb();

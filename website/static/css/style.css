@@ -173,6 +173,8 @@ transform:translateY(-100vh);
 
 }
 .hero-left{
+    margin-top: 32px;
+    max-width: 650px;
 flex:1;
 }
 
@@ -182,6 +184,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 position:relative;
+transform:translateX(-5px) translateY(30px);
 }
 
 .hero-left h1{
@@ -1021,11 +1024,60 @@ justify-content:center;
 align-items:center;
 
 }
+.infinity-container::before{
+
+content:'';
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(123,97,255,0.18),
+transparent 70%
+);
+
+filter:blur(80px);
+
+z-index:-1;
+
+}
+
 .infinity-wrap{
 position:relative;
-width:600px;
-height:300px;
+width:720px;
+height:360px;
 overflow:visible;
+transform: scale(1.4);
+transform-origin:center;
+}
+.infinity-wrap::before{
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(
+        circle,
+        rgba(123,97,255,0.08),
+        transparent 70%
+    );
+
+    filter:blur(40px);
+
+    z-index:-1;
 }
 .infinity-path{
     position:absolute;
@@ -1037,49 +1089,31 @@ overflow:visible;
 
 .infinity-path path{
 
-fill:none;
+stroke:url(#infinityGradient);
 
-stroke:#4deeea;
-
-stroke-width:4px;
-
+stroke-width:3px;
 stroke-linecap:round;
-
-opacity:0.55;
-
-filter:
-drop-shadow(0 0 12px rgba(77,238,234,0.35));
-
+opacity:0.75;
+fill: none;
 }
+
 .orb{
 
 position:absolute;
 
-top:0;
-left:0;
-
-width:48px;
-height:48px;
+width:14px;
+height:14px;
 
 border-radius:50%;
 
-background:
-radial-gradient(
-circle,
-#b794ff,
-#7b61ff
-);
+background:#a78bfa;
 
 box-shadow:
-0 0 25px rgba(123,97,255,0.9),
-0 0 50px rgba(123,97,255,0.5),
-0 0 100px rgba(123,97,255,0.2);
-
-pointer-events:none;
-
-animation:orbPulse 3s ease-in-out infinite;
+0 0 6px rgba(167,139,250,.8),
+0 0 14px rgba(167,139,250,.35);
 
 }
+
 @keyframes orbPulse{
 
 0%{
@@ -1092,6 +1126,26 @@ scale:1.15;
 
 100%{
 scale:1;
+}
+
+}
+.center-core{
+display:none;
+
+}
+
+@keyframes corePulse{
+
+0%,100%{
+
+transform:translate(-50%,-50%) scale(1);
+
+}
+
+50%{
+
+transform:translate(-50%,-50%) scale(1.8);
+
 }
 
 }
