@@ -127,4 +127,5 @@ function revealOnScroll() {
 }
 
 window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
 window.addEventListener('load', revealOnScroll);
