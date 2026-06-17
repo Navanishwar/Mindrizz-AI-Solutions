@@ -43,6 +43,13 @@ def contact(request):
 
             try:
                 print("STEP 4 - ABOUT TO SEND ADMIN EMAIL")
+                import socket
+
+                try:
+                    print("SMTP IP:", socket.gethostbyname("smtp.gmail.com"))
+                except Exception as e:
+                    print("DNS ERROR:", e)
+                    
                 send_mail(
                     subject='🚀 New Lead - MindRizz',
                     message=message,
