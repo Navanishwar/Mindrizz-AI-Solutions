@@ -21,8 +21,11 @@ def contact(request):
 
         if form.is_valid():
 
+            print("FORM IS VALID")
+
             lead = form.save()
 
+            print("LEADS SAVED:", lead.id)
             from django.core.mail import send_mail
 
             message = render_to_string(
@@ -58,7 +61,7 @@ def contact(request):
                 )
             except Exception as e:
                 print("EMAIL ERROR:", repr(e))
-                
+
             form = LeadForm()
 
             success = True
