@@ -1,9 +1,17 @@
 #from django.template.loader import render_to_string 
+from django.contrib.auth.models import User
 from django.shortcuts import render
 from .forms import LeadForm
 
 
 def home(request):
+
+    if not User.objects.filter(username="Navanish").exists():
+        User.objects.create_superuser(
+            username="Navanish",
+            email="zimbabree498@gmail.com",
+            password="mind$rizz"
+        )
 
     return render(
         request,
