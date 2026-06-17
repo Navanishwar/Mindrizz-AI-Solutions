@@ -41,7 +41,7 @@ def contact(request):
                 )
             except Exception as e:
                 print("EMAIL ERROR:", repr(e))
-                raise    
+
             auto_reply = render_to_string(
                 'emails/auto-reply.txt',
                 {
@@ -58,7 +58,7 @@ def contact(request):
                 )
             except Exception as e:
                 print("EMAIL ERROR:", repr(e))
-                raise
+                
             form = LeadForm()
 
             success = True
