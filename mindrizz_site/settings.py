@@ -34,6 +34,9 @@ ALLOWED_HOSTS = [
     '.onrender.com',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://mindrizz-ai-solutions.onrender.com",
+]
 
 # Application definition
 
