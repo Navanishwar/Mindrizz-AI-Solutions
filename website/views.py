@@ -23,7 +23,11 @@ def contact(request):
 
             print("FORM IS VALID")
 
+            print("STEP 1 - FORM VALID")
+
             lead = form.save()
+
+            print("STEP 2 - SAVE COMPLETE")
 
             print("LEADS SAVED:", lead.id, lead.name, lead.email)
 
@@ -35,6 +39,8 @@ def contact(request):
                     'lead': lead
                 }
             )
+            print("STEP 3 - TEMPLATE RENDERED")
+            
             try:
                 send_mail(
                     subject='🚀 New Lead - MindRizz',
