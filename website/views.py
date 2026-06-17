@@ -40,8 +40,9 @@ def contact(request):
                 }
             )
             print("STEP 3 - TEMPLATE RENDERED")
-            
+
             try:
+                print("STEP 4 - ABOUT TO SEND ADMIN EMAIL")
                 send_mail(
                     subject='🚀 New Lead - MindRizz',
                     message=message,
@@ -49,6 +50,7 @@ def contact(request):
                     recipient_list=['navaneshwarreddy1614@gmail.com'],
                     fail_silently=False,
                 )
+                print("STEP 5 - ADMIN EMAIL SENT")
             except Exception as e:
                 print("EMAIL ERROR:", repr(e))
 
