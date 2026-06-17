@@ -23,8 +23,38 @@ def contact(request):
 
             lead = form.save()
 
-            # Email temporarily disabled
-            
+            from django.core.mail import send_mail
+
+            message = render_to_string(
+                'emails/leads_notification.txt',
+                {
+                    'lead': lead
+                }
+            )
+
+            send_mail(
+                subject='🚀 New Lead - MindRizz',
+                message=message,
+                from_email=None,
+                recipient_list=['navaneshwarreddy1614@gmail.com'],
+                fail_silently=False,
+            )
+
+            auto_reply = render_to_string(
+                'emails/auto-reply.txt',
+                {
+                    'lead': lead
+                }
+            )
+
+            send_mail(
+                subject='Thank you for contacting MindRizz',
+                message=auto_reply,
+                from_email=None,
+                recipient_list=[lead.email],
+                fail_silently=False,
+            )
+
             form = LeadForm()
 
             success = True
