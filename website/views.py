@@ -25,7 +25,8 @@ def contact(request):
 
             lead = form.save()
 
-            print("LEADS SAVED:", lead.id)
+            print("LEADS SAVED:", lead.id, lead.name, lead.email)
+
             from django.core.mail import send_mail
 
             message = render_to_string(
