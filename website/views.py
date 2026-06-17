@@ -1,4 +1,4 @@
-from django.template.loader import render_to_string 
+#from django.template.loader import render_to_string 
 from django.shortcuts import render
 from .forms import LeadForm
 
@@ -21,62 +21,65 @@ def contact(request):
 
         if form.is_valid():
 
-            print("FORM IS VALID")
+            #print("FORM IS VALID")
 
-            print("STEP 1 - FORM VALID")
+            #print("STEP 1 - FORM VALID")
 
             lead = form.save()
 
-            print("STEP 2 - SAVE COMPLETE")
+            #print("STEP 2 - SAVE COMPLETE")
 
-            print("LEADS SAVED:", lead.id, lead.name, lead.email)
+            #print("LEADS SAVED:", lead.id, lead.name, lead.email)
 
-            from django.core.mail import send_mail
+            #from django.core.mail import send_mail
 
-            message = render_to_string(
-                'emails/leads_notification.txt',
-                {
-                    'lead': lead
-                }
-            )
-            print("STEP 3 - TEMPLATE RENDERED")
+            #message = render_to_string(
+            #    'emails/leads_notification.txt',
+             #   {
+              #      'lead': lead
+               # }
+            #)
+            #print("STEP 3 - TEMPLATE RENDERED")
 
-            try:
-                print("STEP 4 - ABOUT TO SEND ADMIN EMAIL")
-                import socket
+            #try:
+              #  print("STEP 4 - ABOUT TO SEND ADMIN EMAIL")
+               # import socket
 
-                try:
-                    print("SMTP IP:", socket.gethostbyname("smtp.gmail.com"))
-                except Exception as e:
-                    print("DNS ERROR:", e)
-                    
-                send_mail(
-                    subject='🚀 New Lead - MindRizz',
-                    message=message,
-                    from_email=None,
-                    recipient_list=['navaneshwarreddy1614@gmail.com'],
-                    fail_silently=False,
-                )
-                print("STEP 5 - ADMIN EMAIL SENT")
-            except Exception as e:
-                print("EMAIL ERROR:", repr(e))
+                #try:
+                 #   print("SMTP IP:", socket.gethostbyname("smtp.gmail.com"))
+                #except Exception as e:
+                 #   print("DNS ERROR:", e)
+                #print("EMAIL HOST:", settings.EMAIL_HOST)
+                #print("EMAIL USER:", settings.EMAIL_HOST_USER)  
+                #send_mail(
+                 #   subject='🚀 New Lead - MindRizz',
+                  #  message=message,
+                   # from_email=None,
+                    #recipient_list=['navaneshwarreddy1614@gmail.com'],
+                    #fail_silently=False,
+                #)
+                #print("STEP 5 - ADMIN EMAIL SENT")
+            #except Exception as e:
+             #   print("EMAIL ERROR:", type(e).__name__)
+              #  print("EMAIL ERROR DETAILS:", repr(e))
+               # raise
 
-            auto_reply = render_to_string(
-                'emails/auto-reply.txt',
-                {
-                    'lead': lead
-                }
-            )
-            try:
-                send_mail(
-                    subject='Thank you for contacting MindRizz',
-                    message=auto_reply,
-                    from_email=None,
-                    recipient_list=[lead.email],
-                    fail_silently=False,
-                )
-            except Exception as e:
-                print("EMAIL ERROR:", repr(e))
+            #auto_reply = render_to_string(
+             #   'emails/auto-reply.txt',
+              #  {
+               #     'lead': lead
+                #}
+            #)
+            #try:
+             #   send_mail(
+              #      subject='Thank you for contacting MindRizz',
+               #     message=auto_reply,
+                #    from_email=None,
+                #    recipient_list=[lead.email],
+                 #   fail_silently=False,
+                #)
+            #except Exception as e:
+             #   print("EMAIL ERROR:", repr(e))
 
             form = LeadForm()
 
