@@ -69,42 +69,46 @@ document.addEventListener("DOMContentLoaded", () => {
 ========================================== */
 
 const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+const navLinks   = document.querySelector('.nav-links');
+const mainNav    = document.getElementById('main-nav');
 
-if(menuToggle && navLinks){
-
+if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('open', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen);
+    });
 
-    navLinks.classList.toggle('active');
+    document.addEventListener('click', (e) => {
+        if (
+            navLinks.classList.contains('active') &&
+            !navLinks.contains(e.target) &&
+            !menuToggle.contains(e.target)
+        ) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
 
-    if(navLinks.classList.contains('active')){
-
-        menuToggle.innerHTML = '✕';
-
-    }else{
-
-        menuToggle.innerHTML = '☰';
-
-    }
-
-});
-
+    navLinks.querySelectorAll('.nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
 }
-document.addEventListener('click', (event) => {
 
-    if(
-        navLinks.classList.contains('active') &&
-        !navLinks.contains(event.target) &&
-        !menuToggle.contains(event.target)
-    ){
+/* ==========================================
+   Navbar scroll effect
+========================================== */
 
-        navLinks.classList.remove('active');
-
-        menuToggle.innerHTML = '☰';
-
-    }
-
-});
+if (mainNav) {
+    const onScroll = () => mainNav.classList.toggle('scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+}
 /* ==========================================
    Scroll Reveal Animation
 ========================================== */
