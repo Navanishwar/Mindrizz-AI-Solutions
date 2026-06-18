@@ -75,8 +75,91 @@ if(menuToggle && navLinks){
 
     menuToggle.addEventListener('click', () => {
 
-        navLinks.classList.toggle('active');
+    navLinks.classList.toggle('active');
+
+    if(navLinks.classList.contains('active')){
+
+        menuToggle.innerHTML = '✕';
+
+    }else{
+
+        menuToggle.innerHTML = '☰';
+
+    }
+
+});
+
+}
+document.addEventListener('click', (event) => {
+
+    if(
+        navLinks.classList.contains('active') &&
+        !navLinks.contains(event.target) &&
+        !menuToggle.contains(event.target)
+    ){
+
+        navLinks.classList.remove('active');
+
+        menuToggle.innerHTML = '☰';
+
+    }
+
+});
+/* ==========================================
+   Scroll Reveal Animation
+========================================== */
+
+function revealOnScroll() {
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    reveals.forEach((element) => {
+
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 50) {
+            element.classList.add('active');
+        }
 
     });
 
 }
+
+/* Scroll Reveal Animation */
+
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver(
+
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add('active');
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:0.15
+    }
+
+);
+
+revealElements.forEach((element) => {
+
+    revealObserver.observe(element);
+
+});
+
+window.addEventListener('scroll', revealOnScroll);
+
+revealOnScroll();
+
+window.addEventListener('load', revealOnScroll);
