@@ -102,79 +102,118 @@ body{
 ===================================================== */
 
 nav{
-position:fixed;
-top:0;
-width:100%;
-padding:22px 7%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-backdrop-filter:blur(12px);
-background:rgba(0,0,0,0.25);
-z-index:1000;
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,0.25);
+    z-index:1000;
 }
 
 .logo{
 
-font-size:2.2rem;
+    font-size:2.2rem;
 
-font-weight:800;
+    font-weight:800;
 
-letter-spacing:-1px;
+    letter-spacing:-1px;
 
-color:#00E5FF;
+    color:#00E5FF;
 
-cursor:pointer;
+    cursor:pointer;
 
 }
 
 .nav-links{
 
-display:flex;
+    display:flex;
 
-gap:40px;
+    gap:40px;
 
-list-style:none;
+    list-style:none;
 
-align-items:center;
+    align-items:center;
 
-margin:0;
+    margin:0;
 
-padding:0;
+    padding:0;
 
 }
 
 .nav-links li{
 
-list-style:none;
+    list-style:none;
 
 }
 
 .nav-links a{
 
-text-decoration:none;
+    position: relative;
 
-color:white;
+    text-decoration:none;
 
-font-size:1.1rem;
+    color:white;
 
-font-weight:500;
+    font-size:1.1rem;
 
-transition:0.3s ease;
+    font-weight:500;
+
+    transition:0.3s ease;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:#00E5FF;
+
+    transition:width .3s ease;
 
 }
 
 .nav-links a:hover{
 
-color:#00f5ff;
+    color:#00f5ff;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
 
 }
 
 nav a{
-text-decoration:none;
-color:white;
+    text-decoration:none;
+    color:white;
 }
 
+.nav-links a.active{
+
+    color:#00E5FF;
+
+}
+
+.nav-links a.active::after{
+
+    width:100%;
+
+}
 .menu-toggle{
 
     display:none;
