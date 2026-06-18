@@ -845,17 +845,6 @@ z-index:-1;
 
 }
 
-.why-card:hover{
-
-    transform:translateY(-12px);
-
-    box-shadow:
-    0 15px 40px rgba(0,229,255,.08),
-    0 15px 60px rgba(139,92,246,.08);
-
-    border:1px solid var(--card-border);
-
-}
 
 .why-card:hover .card-number{
 
@@ -1519,7 +1508,7 @@ z-index:-1;
 
 .about-card:hover{
 
-    transform:translateY(-12px);
+    transform:translateY(-10px) scale(1.02);
 
     box-shadow:
     0 15px 40px rgba(0,229,255,.08),
