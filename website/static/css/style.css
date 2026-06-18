@@ -1,100 +1,200 @@
 /* =====================================================
-   MINDRIZZ WEBSITE
-   Main Stylesheet
+   MINDRIZZ AI SOLUTIONS
+   Enterprise Design System
    Author: Navanish
 ===================================================== */
-:root{
 
-    /* Brand Colors */
-
-    --primary:#00f5ff;
-    --secondary:#7b61ff;
-
-    --heading-gradient: linear-gradient(
-        90deg,
-        #00E5FF,
-        #38BDF8,
-        #8B5CF6
-    );
-
-    --brand-gradient:linear-gradient(
-        90deg,
-        #00f5ff,
-        #7b61ff
-    );
-    /* Backgrounds */
-
-    --bg:#050816;
-    --glass:rgba(255,255,255,0.05);
-
-    /* Card System */
-
-    --card-bg:rgba(255,255,255,0.03);
-    --card-border:rgba(255,255,255,0.08);
-
-    /* Effects */
-
-    --glass-blur:12px;
-    --transition:all .35s ease;
-    /* Text */
-
-    --text:#ffffff;
-    --text-muted:rgba(255,255,255,0.75);
-
-    /* Borders */
-
-    --border:rgba(255,255,255,0.08);
-
-    /* Radius */
-
-    --radius-lg:24px;
-    --radius-md:20px;
-    --radius-sm:12px;
-
-}
 /* =====================================================
-   1. GLOBAL / Foundation 
+   GOOGLE FONTS
+   Inter  — body / UI text
+   Syne   — display / headings
+===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+
+/* =====================================================
+   DESIGN TOKENS
+===================================================== */
+:root {
+
+    /* ── Core Palette ─────────────────────────────── */
+    --primary:          #6C63FF;          /* electric violet */
+    --primary-light:    #8B85FF;
+    --primary-dark:     #4B44CC;
+
+    --secondary:        #00D4FF;          /* cyan accent */
+    --secondary-light:  #4DE3FF;
+    --secondary-dark:   #0099BB;
+
+    /* ── Semantic / Status ────────────────────────── */
+    --success:          #10B981;
+    --warning:          #F59E0B;
+    --error:            #EF4444;
+    --info:             #3B82F6;
+
+    /* ── Backgrounds ──────────────────────────────── */
+    --bg:               #0a0a0f;          /* deep dark base */
+    --bg-elevated:      #0f0f18;          /* cards, panels */
+    --bg-overlay:       #13131f;          /* modals, drawers */
+
+    /* ── Glass System ─────────────────────────────── */
+    --glass-white-4:    rgba(255,255,255,0.04);
+    --glass-white-6:    rgba(255,255,255,0.06);
+    --glass-white-10:   rgba(255,255,255,0.10);
+    --glass-white-15:   rgba(255,255,255,0.15);
+    --glass-blur:       14px;
+    --glass:            rgba(255,255,255,0.05);   /* legacy alias */
+
+    /* ── Card System ──────────────────────────────── */
+    --card-bg:          rgba(255,255,255,0.03);
+    --card-border:      rgba(255,255,255,0.08);
+    --card-hover-bg:    rgba(255,255,255,0.06);
+    --card-hover-border:rgba(108,99,255,0.35);
+
+    /* ── Gradients ────────────────────────────────── */
+    --heading-gradient: linear-gradient(
+        135deg,
+        #6C63FF 0%,
+        #00D4FF 50%,
+        #6C63FF 100%
+    );
+    --brand-gradient: linear-gradient(
+        135deg,
+        #6C63FF,
+        #00D4FF
+    );
+    --brand-gradient-reverse: linear-gradient(
+        135deg,
+        #00D4FF,
+        #6C63FF
+    );
+    --glow-primary: radial-gradient(
+        circle,
+        rgba(108,99,255,0.20),
+        transparent 70%
+    );
+    --glow-secondary: radial-gradient(
+        circle,
+        rgba(0,212,255,0.15),
+        transparent 70%
+    );
+
+    /* ── Typography ───────────────────────────────── */
+    --font-body:        'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading:     'Syne', 'Inter', system-ui, sans-serif;
+
+    --text:             #F0F0FF;
+    --text-secondary:   rgba(240,240,255,0.80);
+    --text-muted:       rgba(240,240,255,0.55);
+    --text-subtle:      rgba(240,240,255,0.35);
+
+    /* ── Borders ──────────────────────────────────── */
+    --border:           rgba(255,255,255,0.08);
+    --border-strong:    rgba(255,255,255,0.14);
+    --border-accent:    rgba(108,99,255,0.40);
+
+    /* ── Radius ───────────────────────────────────── */
+    --radius-xs:        6px;
+    --radius-sm:        10px;
+    --radius-md:        16px;
+    --radius-lg:        22px;
+    --radius-xl:        32px;
+    --radius-full:      9999px;
+
+    /* ── Spacing (8px base grid) ──────────────────── */
+    --space-1:          8px;
+    --space-2:          16px;
+    --space-3:          24px;
+    --space-4:          32px;
+    --space-5:          40px;
+    --space-6:          48px;
+    --space-8:          64px;
+    --space-10:         80px;
+    --space-12:         96px;
+
+    /* ── Shadows ──────────────────────────────────── */
+    --shadow-sm:        0 2px 8px rgba(0,0,0,0.35);
+    --shadow-md:        0 8px 32px rgba(0,0,0,0.45);
+    --shadow-lg:        0 20px 60px rgba(0,0,0,0.55);
+    --shadow-glow:      0 0 40px rgba(108,99,255,0.20),
+                        0 0 80px rgba(0,212,255,0.10);
+
+    /* ── Transitions ──────────────────────────────── */
+    --ease-out:         cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-out:      cubic-bezier(0.4, 0, 0.2, 1);
+    --transition:       all 0.35s var(--ease-out);
+    --transition-fast:  all 0.18s var(--ease-out);
+    --transition-slow:  all 0.6s var(--ease-out);
+}
+
+/* =====================================================
+   1. GLOBAL / Foundation
 ===================================================== */
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI,sans-serif;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:var(--bg);
-    color:var(--text);
-    overflow-x:hidden;
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.gradient{
-    background:linear-gradient(90deg,#00f5ff,#7b61ff);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+p {
+    color: var(--text-secondary);
+    line-height: 1.75;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Gradient text utility */
+.gradient {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Reusable Section Subtitle */
 
-.section-subtitle{
-
-    text-align:center;
-
-    max-width:700px;
-
-    margin:0 auto 40px;
-
-    font-size:1.1rem;
-
-    line-height:1.8;
-
-    color:rgba(255,255,255,.75);
-
+.section-subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    font-family: var(--font-body);
 }
 
 /* =====================================================
