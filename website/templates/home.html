@@ -1,228 +1,195 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block content %}
+
+<!-- ===== HERO SECTION ===== -->
 <section class="hero">
-
-    <div class="hero-left reveal">
-
-
+    <div class="hero-left reveal-premium">
         <h1>
-            <span class="gradient">AI Consulting &
-                Business
-                Automation
-            </span>
+            <span class="gradient">AI Consulting &amp;<br>Business Automation</span>
         </h1>
-
-        <p>
+        <p style="max-width:600px;font-size:clamp(1.1rem,1.2vw,1.3rem);">
             Streamline operations, eliminate repetitive work, and scale your business with intelligent automation.
         </p>
-
+        <div class="hero-buttons">
+            <a href="/contact/" class="btn-premium">
+                <span>Get Started</span>
+                <span>→</span>
+            </a>
+            <a href="/services/" class="btn-premium-outline">
+                <span>Explore Services</span>
+            </a>
+        </div>
     </div>
 
-    </div>
-
-    <div class="hero-right reveal">
-
+    <div class="hero-right reveal-premium" style="flex:1;display:flex;justify-content:center;align-items:center;">
         <div class="infinity-container">
-
             <div class="infinity-wrap">
-                <div class="orb-trail"></div>
-                
-                <svg 
-                viewBox="0 0 600 300" 
-                width="600" 
-                height="300"
-                class="infinity-path">
+                <svg viewBox="0 0 600 300" width="600" height="300" class="infinity-path">
                     <defs>
-
-                        <linearGradient id="infinityGradient"
-                            x1="0%"
-                            y1="0%"
-                            x2="100%"
-                            y2="0%">
-
+                        <linearGradient id="infinityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" stop-color="#00E5FF"/>
-
                             <stop offset="50%" stop-color="#38BDF8"/>
-
                             <stop offset="100%" stop-color="#8B5CF6"/>
-
                         </linearGradient>
-
                     </defs>
-
-                    <path
-                    id="infinityCurve"
-                    d="M150,150
-                    C150,70 250,70 300,150
-                    C350,230 450,230 450,150
-                    C450,70 350,70 300,150
-                    C250,230 150,230 150,150"
-                    />
-
-                
-
+                    <path id="infinityCurve" 
+                          d="M150,150 C150,70 250,70 300,150 C350,230 450,230 450,150 C450,70 350,70 300,150 C250,230 150,230 150,150"
+                          stroke="url(#infinityGradient)" 
+                          stroke-width="3" 
+                          stroke-linecap="round"
+                          opacity="0.75"
+                          fill="none"/>
                 </svg>
-
                 <div class="orb"></div>
-
             </div>
-
         </div>
+    </div>
+</section>
 
+<!-- ===== WHY CHOOSE US ===== -->
+<section class="why-us">
+    <div class="reveal-premium">
+        <h2>Why Businesses Choose MindRizz</h2>
+        <p class="section-subtitle">
+            Helping businesses reduce operational costs, increase efficiency, and scale with AI-powered automation.
+        </p>
     </div>
 
-</section>
-
-<section class="services">
-
-    <section class="why-us">
-
-        <h2>Why Businesses Choose Mindrizz</h2>
-
-        <p class="section-subtitle">
-            Helping businesses reduce operational costs,
-            increase efficiency, and scale with AI-powered automation.
-        </p>
-
-        <div class="why-grid">
-
-            <div class="reveal">
-                <div class="why-card">
-                    <span class="card-number">01</span>
-                    <h3>Automation First</h3>
-                    <p>
-                        We eliminate repetitive work and streamline business operations.
-                    </p>
-                </div>
+    <div class="why-grid">
+        <div class="reveal-premium stagger" data-delay="0">
+            <div class="why-card card-lift">
+                <span class="card-number">01</span>
+                <h3>Automation First</h3>
+                <p>We eliminate repetitive work and streamline business operations with intelligent AI solutions.</p>
             </div>
-
-            <div class="reveal">
-                <div class="why-card">
-                    <span class="card-number">02</span>
-                    <h3>AI Expertise</h3>
-                    <p>
-                        Custom AI solutions tailored to your business requirements.
-                    </p>
-                </div>
-            </div>
-
-            <div class="reveal">
-                <div class="why-card">
-                    <span class="card-number">03</span>
-                    <h3>Fast Deployment</h3>
-                    <p>
-                        From idea to implementation in weeks, not months.
-                    </p>
-                </div>
-            </div>
-
         </div>
 
-    </section>
+        <div class="reveal-premium stagger" data-delay="80">
+            <div class="why-card card-lift">
+                <span class="card-number">02</span>
+                <h3>AI Expertise</h3>
+                <p>Custom AI solutions tailored to your specific business requirements and industry needs.</p>
+            </div>
+        </div>
+
+        <div class="reveal-premium stagger" data-delay="160">
+            <div class="why-card card-lift">
+                <span class="card-number">03</span>
+                <h3>Fast Deployment</h3>
+                <p>From concept to implementation in weeks, not months, with minimal business disruption.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
+<!-- ===== PROCESS ===== -->
 <section class="process">
+    <div class="reveal-premium">
+        <h2>Our Process</h2>
+        <p class="section-subtitle">A structured approach that takes your business from manual operations to intelligent automation.</p>
+    </div>
 
-    <h2>Our Process</h2>
-    <p class= "section-subtitle">A structured approach that takes your business from manual operations to intelligent automation.</p>
     <div class="process-grid">
-        <div class="reveal">
-            <div class="process-card">
+        <div class="reveal-premium" data-delay="0">
+            <div class="process-card card-lift">
                 <span class="card-number">01</span>
                 <h3>Discovery</h3>
-                <p>
-                We analyze your current workflows and identify automation opportunities.
-                </p>
+                <p>We analyze your current workflows and identify key automation opportunities for maximum impact.</p>
             </div>
         </div>
 
-
-        <div class="reveal">
-            <div class="process-card">
+        <div class="reveal-premium" data-delay="80">
+            <div class="process-card card-lift">
                 <span class="card-number">02</span>
                 <h3>Strategy</h3>
-                <p>         
-                We design a custom AI automation roadmap for your business.
-                </p>
+                <p>We design a custom AI automation roadmap aligned with your business goals and growth plans.</p>
             </div>
         </div>
 
-        <div class="reveal">
-            <div class="process-card">
+        <div class="reveal-premium" data-delay="160">
+            <div class="process-card card-lift">
                 <span class="card-number">03</span>
                 <h3>Implementation</h3>
-                <p>             
-                    We build and deploy the solution with minimal disruption.
-                </p>
+                <p>We build and deploy the solution with minimal disruption to your daily operations.</p>
             </div>
         </div>
 
-        <div class="reveal">
-            <div class="process-card">
+        <div class="reveal-premium" data-delay="240">
+            <div class="process-card card-lift">
                 <span class="card-number">04</span>
                 <h3>Optimization</h3>
-                <p>
-                We continuously improve performance and efficiency.
-                </p>
+                <p>We continuously monitor, refine, and improve performance to ensure lasting efficiency gains.</p>
             </div>
         </div>
     </div>
-
 </section>
 
+<!-- ===== INDUSTRIES ===== -->
 <section class="industries">
+    <div class="reveal-premium">
+        <h2>Industries We Serve</h2>
+        <p class="section-subtitle">
+            Helping organizations across industries automate operations and unlock growth through AI.
+        </p>
+    </div>
 
-    <h2>Industries We Serve</h2>
-    <p class="section-subtitle">
-    Helping organizations across industries automate operations and unlock growth through AI.
-    </p>
     <div class="industry-grid">
-        <div class="reveal">
-            <div class="industry-card manufacturing">
-                <div class="industry-icon">🏭</div>
-                    <h3> Manufacturing</h3>
+        <div class="reveal-premium" data-delay="0">
+            <div class="industry-card manufacturing card-lift">
+                <div class="industry-icon-3d manufacturing">
+                    <span class="icon-emoji">🏭</span>
+                </div>
+                <h3>Manufacturing</h3>
             </div>
         </div>
 
-        <div class="reveal">
-            <div class="industry-card retail">
-                <div class="industry-icon">🛒</div>
-                    <h3> Retail</h3>
+        <div class="reveal-premium" data-delay="60">
+            <div class="industry-card retail card-lift">
+                <div class="industry-icon-3d retail">
+                    <span class="icon-emoji">🛒</span>
+                </div>
+                <h3>Retail</h3>
             </div>
         </div>
 
-        <div class="reveal">
-            <div class="industry-card healthcare">
-                <div class="industry-icon">🏥</div>
-                    <h3> Healthcare</h3>
+        <div class="reveal-premium" data-delay="120">
+            <div class="industry-card healthcare card-lift">
+                <div class="industry-icon-3d healthcare">
+                    <span class="icon-emoji">🏥</span>
+                </div>
+                <h3>Healthcare</h3>
             </div>
         </div>
 
-        <div class="reveal">
-            <div class="industry-card finance">
-                <div class="industry-icon">💰</div>
-                    <h3> Finance</h3>
+        <div class="reveal-premium" data-delay="180">
+            <div class="industry-card finance card-lift">
+                <div class="industry-icon-3d finance">
+                    <span class="icon-emoji">💰</span>
+                </div>
+                <h3>Finance</h3>
             </div>
         </div>
 
-        <div class="reveal">
-            <div class="industry-card education">
-                <div class="industry-icon">🎓</div>
-                    <h3> Education</h3>
+        <div class="reveal-premium" data-delay="240">
+            <div class="industry-card education card-lift">
+                <div class="industry-icon-3d education">
+                    <span class="icon-emoji">🎓</span>
+                </div>
+                <h3>Education</h3>
             </div>
         </div>
 
-        <div class="reveal">
-            <div class="industry-card logistics">
-                <div class="industry-icon">🚚</div>
-                    <h3> Logistics</h3>
+        <div class="reveal-premium" data-delay="300">
+            <div class="industry-card logistics card-lift">
+                <div class="industry-icon-3d logistics">
+                    <span class="icon-emoji">🚚</span>
+                </div>
+                <h3>Logistics</h3>
             </div>
         </div>
     </div>
-
 </section>
 
 {% endblock %}

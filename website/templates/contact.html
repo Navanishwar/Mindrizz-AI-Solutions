@@ -3,93 +3,52 @@
 {% block content %}
 
 {% if success %}
-
 <div class="success-overlay">
-
-    <div class="success-modal">
-
-        <h3>✓ Inquiry Submitted</h3>
-
+    <div class="success-modal glass-premium">
+        <h3 style="font-family:'Space Grotesk',sans-serif;">✓ Inquiry Submitted</h3>
         <p>
-            Thank you for reaching out to Mindrizz.
+            Thank you for reaching out to MindRizz.<br>
             A member of our team will contact you shortly.
         </p>
-
-        <button type="button" class="btn close-modal">
-        Got It
+        <button type="button" class="btn-premium close-modal" style="width:auto;">
+            <span>Got It</span>
         </button>
     </div>
-
 </div>
 <script>
-    gtag('event', 'generate_lead',{
+    gtag('event', 'generate_lead', {
         value: 1,
         currency: 'INR'
     });
 </script>
 {% endif %}
 
-
-
 <section class="contact-section">
-    <div class="reveal">
-        <div class="contact-card">
+    <div class="reveal-premium">
+        <div class="contact-card glass-premium">
             <h2>Let's Build Something Intelligent</h2>
             <p class="contact-subtitle">
-                Have a project in mind? Let's discuss how we can leverage AI to transform your business.
+                Have a project in mind? Let's discuss how we can leverage AI to transform your business operations.
             </p>
+
             <div class="contact-benefits">
-
                 <span>✓ Free Consultation</span>
-
                 <span>✓ Custom AI Strategy</span>
-
                 <span>✓ Fast Response</span>
-
             </div>
-            <form method="POST" class="contact-form">
 
+            <form method="POST" class="contact-form form-premium">
                 {% csrf_token %}
 
-                <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-                >
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Business Email" required>
+                <input type="text" name="phone" placeholder="Phone Number" required>
+                <input type="text" name="company" placeholder="Company Name" required>
+                <textarea name="requirement" rows="6" placeholder="Tell us about your automation goals, challenges, or project requirements..." required></textarea>
 
-                <input
-                type="email"
-                name="email"
-                placeholder="Business Email"
-                required
-                >
-
-                <input
-                type="text"
-                name="phone"
-                placeholder="Phone Number"
-                required
-                >
-
-                <input
-                type="text"
-                name="company"
-                placeholder="Company Name"
-                required
-                >
-
-                <textarea
-                name="requirement"
-                rows="6"
-                placeholder="Tell us about your automation goals, challenges, or project requirements..."
-                required
-                ></textarea>
-
-                <button type="submit" class="btn">
-
-                Book Free Consultation
-
+                <button type="submit" class="btn-premium" style="width:100%;margin-top:10px;">
+                    <span>Book Free Consultation</span>
+                    <span>→</span>
                 </button>
             </form>
         </div>

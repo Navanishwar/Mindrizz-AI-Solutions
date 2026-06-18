@@ -1,0 +1,568 @@
+/* ================================================
+   MINDRIZZ PREMIUM ENHANCEMENTS
+   Modern UI/UX with 3D icons, premium typography,
+   glassmorphism, and advanced animations
+   ================================================ */
+
+/* ================================================
+   1. PREMIUM TYPOGRAPHY
+   ================================================ */
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(2.6rem, 4.5vw, 4rem);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+    line-height: 1.3;
+}
+
+p, li, .text-body, .contact-subtitle, .services-subtitle, .about-subtitle {
+    font-size: clamp(0.95rem, 1vw, 1.05rem);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.section-subtitle {
+    font-size: clamp(0.95rem, 1vw, 1.05rem);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: rgba(255, 255, 255, 0.72);
+    font-weight: 400;
+}
+
+/* ================================================
+   2. BRAND SYMBOL - BRAIN + LIGHTNING
+   ================================================ */
+
+.brand-symbol-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.brand-symbol {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.brand-symbol:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.brand-symbol svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.25));
+    transition: filter 0.4s ease;
+}
+
+.brand-symbol:hover svg {
+    filter: drop-shadow(0 0 40px rgba(0, 245, 255, 0.5)) drop-shadow(0 0 60px rgba(123, 97, 255, 0.2));
+}
+
+/* Shake animation */
+@keyframes brainShake {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    10% { transform: rotate(-10deg) scale(1.05); }
+    20% { transform: rotate(10deg) scale(1.05); }
+    30% { transform: rotate(-8deg) scale(1.03); }
+    40% { transform: rotate(8deg) scale(1.03); }
+    50% { transform: rotate(-6deg) scale(1.02); }
+    60% { transform: rotate(6deg) scale(1.02); }
+    70% { transform: rotate(-4deg) scale(1.01); }
+    80% { transform: rotate(4deg) scale(1.01); }
+    90% { transform: rotate(-2deg) scale(1); }
+}
+
+.brand-symbol.shake {
+    animation: brainShake 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Pulse glow */
+@keyframes brainPulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.2));
+    }
+    50% {
+        filter: drop-shadow(0 0 35px rgba(123, 97, 255, 0.4)) drop-shadow(0 0 60px rgba(0, 245, 255, 0.15));
+    }
+}
+
+.brand-symbol.pulse {
+    animation: brainPulse 3s ease-in-out infinite;
+}
+
+/* ================================================
+   3. 3D STYLE INDUSTRY ICONS (BUTTON-STYLE)
+   ================================================ */
+
+.industry-icon-3d {
+    width: 76px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    margin: 0 auto 16px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 400px;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.industry-icon-3d .icon-emoji {
+    font-size: 2.6rem;
+    line-height: 1;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    z-index: 2;
+}
+
+/* 3D Button Base */
+.industry-icon-3d::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        0 0 30px rgba(0, 245, 255, 0.03);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 3D Glow Ring */
+.industry-icon-3d::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(0,245,255,0.2), rgba(123,97,255,0.05));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Hover 3D Effect */
+.industry-card:hover .industry-icon-3d {
+    transform: translateY(-6px) scale(1.04) rotateX(4deg) rotateY(-4deg);
+}
+
+.industry-card:hover .industry-icon-3d::before {
+    box-shadow: 
+        0 16px 40px rgba(0, 0, 0, 0.5),
+        0 0 50px rgba(0, 245, 255, 0.12),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+    border-color: rgba(0, 245, 255, 0.25);
+}
+
+.industry-card:hover .industry-icon-3d::after {
+    opacity: 1;
+}
+
+.industry-card:hover .industry-icon-3d .icon-emoji {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+/* Individual Icon Colors */
+.industry-icon-3d.manufacturing::before {
+    background: linear-gradient(145deg, rgba(0,245,255,0.12), rgba(0,245,255,0.02));
+    border-color: rgba(0,245,255,0.15);
+}
+
+.industry-icon-3d.retail::before {
+    background: linear-gradient(145deg, rgba(123,97,255,0.12), rgba(123,97,255,0.02));
+    border-color: rgba(123,97,255,0.15);
+}
+
+.industry-icon-3d.healthcare::before {
+    background: linear-gradient(145deg, rgba(0,255,200,0.12), rgba(0,255,200,0.02));
+    border-color: rgba(0,255,200,0.15);
+}
+
+.industry-icon-3d.finance::before {
+    background: linear-gradient(145deg, rgba(255,215,0,0.12), rgba(255,215,0,0.02));
+    border-color: rgba(255,215,0,0.15);
+}
+
+.industry-icon-3d.education::before {
+    background: linear-gradient(145deg, rgba(0,255,120,0.12), rgba(0,255,120,0.02));
+    border-color: rgba(0,255,120,0.15);
+}
+
+.industry-icon-3d.logistics::before {
+    background: linear-gradient(145deg, rgba(255,140,0,0.12), rgba(255,140,0,0.02));
+    border-color: rgba(255,140,0,0.15);
+}
+
+/* ================================================
+   4. CONTINUOUS SCROLL ANIMATIONS
+   ================================================ */
+
+.reveal-premium {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-premium.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Re-appear when scrolling back up */
+.reveal-premium.reappear {
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Stagger children */
+.reveal-premium.stagger > * {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-premium.stagger.active > *:nth-child(1) { transition-delay: 0.04s; opacity: 1; transform: translateY(0); }
+.reveal-premium.stagger.active > *:nth-child(2) { transition-delay: 0.08s; opacity: 1; transform: translateY(0); }
+.reveal-premium.stagger.active > *:nth-child(3) { transition-delay: 0.12s; opacity: 1; transform: translateY(0); }
+.reveal-premium.stagger.active > *:nth-child(4) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
+.reveal-premium.stagger.active > *:nth-child(5) { transition-delay: 0.20s; opacity: 1; transform: translateY(0); }
+.reveal-premium.stagger.active > *:nth-child(6) { transition-delay: 0.24s; opacity: 1; transform: translateY(0); }
+
+/* Fade from left */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade from right */
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale reveal */
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.94);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ================================================
+   5. PREMIUM GLASSMORPHISM
+   ================================================ */
+
+.glass-premium {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.glass-premium:hover {
+    border-color: rgba(0, 245, 255, 0.12);
+    box-shadow: 
+        0 8px 48px rgba(0, 0, 0, 0.35),
+        0 0 40px rgba(0, 245, 255, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* ================================================
+   6. PREMIUM NAVBAR
+   ================================================ */
+
+.nav-premium {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(5, 8, 22, 0.82);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 16px 7%;
+}
+
+.nav-premium.scrolled {
+    background: rgba(5, 8, 22, 0.95);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 245, 255, 0.06);
+}
+
+.nav-premium .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.nav-premium .logo-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    background: linear-gradient(135deg, #00f5ff, #7b61ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-premium .logo-text:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.15));
+}
+
+.nav-premium .nav-link {
+    position: relative;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-premium .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00f5ff, #7b61ff);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-premium .nav-link:hover {
+    color: #ffffff;
+}
+
+.nav-premium .nav-link:hover::after,
+.nav-premium .nav-link.active::after {
+    width: 100%;
+}
+
+.nav-premium .nav-link.active {
+    color: #00f5ff;
+}
+
+/* ================================================
+   7. PREMIUM BUTTONS
+   ================================================ */
+
+.btn-premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #050816;
+    background: linear-gradient(135deg, #00f5ff, #7b61ff);
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.btn-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #7b61ff, #00f5ff);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.btn-premium:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 12px 40px rgba(0, 245, 255, 0.25),
+        0 0 60px rgba(123, 97, 255, 0.12);
+}
+
+.btn-premium:hover::before {
+    opacity: 1;
+}
+
+.btn-premium span {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-premium-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #ffffff;
+    background: transparent;
+    border: 2px solid rgba(0, 245, 255, 0.25);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-decoration: none;
+}
+
+.btn-premium-outline:hover {
+    transform: translateY(-3px) scale(1.02);
+    border-color: #00f5ff;
+    box-shadow: 
+        0 12px 40px rgba(0, 245, 255, 0.12),
+        inset 0 0 30px rgba(0, 245, 255, 0.04);
+    background: rgba(0, 245, 255, 0.05);
+}
+
+/* ================================================
+   8. RESPONSIVE
+   ================================================ */
+
+@media (max-width: 768px) {
+    .nav-premium {
+        padding: 12px 5%;
+    }
+    
+    .brand-symbol {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .nav-premium .logo-text {
+        font-size: 1.3rem;
+    }
+    
+    .industry-icon-3d {
+        width: 64px;
+        height: 64px;
+        border-radius: 14px;
+    }
+    
+    .industry-icon-3d .icon-emoji {
+        font-size: 2.2rem;
+    }
+    
+    .btn-premium,
+    .btn-premium-outline {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ================================================
+   9. CARD LIFT EFFECT
+   ================================================ */
+
+.card-lift {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+}
+
+/* ================================================
+   10. PREMIUM FORM
+   ================================================ */
+
+.form-premium input,
+.form-premium textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.03);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.form-premium input:focus,
+.form-premium textarea:focus {
+    outline: none;
+    border-color: rgba(0, 245, 255, 0.3);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.04), inset 0 0 30px rgba(0, 245, 255, 0.02);
+}
+
+.form-premium input::placeholder,
+.form-premium textarea::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* ================================================
+   11. SECTION TRANSITIONS
+   ================================================ */
+
+.section-transition {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
