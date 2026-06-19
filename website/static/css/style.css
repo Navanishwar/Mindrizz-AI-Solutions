@@ -1156,7 +1156,7 @@ z-index:-1;
     transparent 70%
     );
 
-    filter:blur(90px);
+    filter:none;
 
     pointer-events:none;
 
@@ -1183,13 +1183,15 @@ z-index:-1;
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3,minmax(0,1fr));
 
     gap:30px;
 
     max-width:1100px;
 
     margin:0 auto;
+
+    align-items: stretch;
 
 }
 
@@ -1202,8 +1204,6 @@ z-index:-1;
     border-radius:var(--radius-lg);
 
     text-align:center;
-
-    backdrop-filter:blur(10px);
 
     border:1px solid var(--card-border);
 
