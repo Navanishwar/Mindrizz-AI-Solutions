@@ -30,37 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // Infinity Animation (Home Page Only)
-    const path = document.getElementById("infinityCurve");
-    const orb = document.querySelector(".orb");
-
-    if(path && orb){
-
-        console.log("Infinity Animation Loaded");
-
-        const length = path.getTotalLength();
-
-        let progress = 0;
-
-        function animateOrb(){
-
-            const point = path.getPointAtLength(progress);
-
-            orb.style.left = (point.x - 7) + "px";
-            orb.style.top = (point.y - 7) + "px";
-
-            progress += 0.88;
-
-            if(progress >= length){
-                progress = 0;
-            }
-
-            requestAnimationFrame(animateOrb);
-        }
-
-        animateOrb();
-
-    }
+    // Removed continuous orb animation to eliminate layout-triggering style writes.
 
 });
 
@@ -109,61 +79,3 @@ if (mainNav) {
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 }
-/* ==========================================
-   Scroll Reveal Animation
-========================================== */
-
-function revealOnScroll() {
-
-    const reveals = document.querySelectorAll('.reveal');
-
-    reveals.forEach((element) => {
-
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 50) {
-            element.classList.add('active');
-        }
-
-    });
-
-}
-
-/* Scroll Reveal Animation */
-
-const revealElements = document.querySelectorAll('.reveal');
-
-const revealObserver = new IntersectionObserver(
-
-    (entries) => {
-
-        entries.forEach((entry) => {
-
-            if(entry.isIntersecting){
-
-                entry.target.classList.add('active');
-
-            }
-
-        });
-
-    },
-
-    {
-        threshold:0.15
-    }
-
-);
-
-revealElements.forEach((element) => {
-
-    revealObserver.observe(element);
-
-});
-
-window.addEventListener('scroll', revealOnScroll);
-
-revealOnScroll();
-
-window.addEventListener('load', revealOnScroll);
