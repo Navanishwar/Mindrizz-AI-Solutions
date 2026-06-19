@@ -1,0 +1,458 @@
+/* =====================================================
+   V2 Premium Hero Section
+   - Dark theme with subtle gradients
+   - Brain + Lightning visual identity
+   - Two CTA buttons
+   - Modern responsive layout
+   - Transform/opacity animations only
+   - No particles, no continuous animations
+===================================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  gap: var(--spacing-xl);
+  margin-top: 4rem; /* Account for fixed navbar */
+  overflow: hidden;
+}
+
+/* ==================== Subtle Background Gradient ==================== */
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle at center,
+    rgba(94, 240, 255, 0.06) 0%,
+    rgba(143, 98, 255, 0.04) 40%,
+    transparent 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ==================== Hero Content (Left Side) ==================== */
+
+.hero-left {
+  flex: 1;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-md);
+  z-index: 2;
+}
+
+.hero-left h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.hero-left h1 .gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(15deg);
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-left h1 .gradient {
+    animation: none;
+  }
+}
+
+.hero-left p {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--text-soft);
+  margin: 0;
+  max-width: 550px;
+}
+
+/* ==================== CTA Buttons Container ==================== */
+
+.hero-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+/* Primary CTA Button */
+.cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: #000;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: transform var(--duration-base) var(--easing-default),
+              box-shadow var(--duration-base) var(--easing-default);
+  box-shadow: 0 0 24px rgba(94, 240, 255, 0.24);
+  text-decoration: none;
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 32px rgba(94, 240, 255, 0.4);
+}
+
+.cta-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Secondary CTA Button */
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: transform var(--duration-base) var(--easing-default),
+              background var(--duration-base) var(--easing-default),
+              border-color var(--duration-base) var(--easing-default);
+  text-decoration: none;
+}
+
+.cta-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(94, 240, 255, 0.1);
+  border-color: var(--accent);
+}
+
+.cta-secondary:active {
+  transform: translateY(0);
+}
+
+/* ==================== Hero Visual (Right Side) ==================== */
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 500px;
+}
+
+/* ==================== Brain + Lightning Container ==================== */
+
+.infinity-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infinity-container::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(94, 240, 255, 0.12) 0%,
+    rgba(143, 98, 255, 0.06) 50%,
+    transparent 70%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.infinity-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.9);
+}
+
+.infinity-wrap::before {
+  content: '';
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(143, 98, 255, 0.08) 0%,
+    transparent 70%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ==================== Static Infinity Path (No Animation) ==================== */
+
+.infinity-path {
+  position: absolute;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  z-index: 1;
+}
+
+.infinity-path path {
+  stroke: url(#infinityGradient);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  fill: none;
+  opacity: 0.8;
+}
+
+/* ==================== Static Orb (No Animation) ==================== */
+
+.orb {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+  box-shadow: 0 0 12px rgba(94, 240, 255, 0.6),
+              inset 0 0 8px rgba(255, 255, 255, 0.3);
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orb-trail {
+  display: none;
+}
+
+.center-core {
+  display: none;
+}
+
+/* ==================== Reveal Animation (from v2-components) ==================== */
+
+.hero-left.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--duration-smooth) var(--easing-default),
+              transform var(--duration-smooth) var(--easing-default);
+}
+
+.hero-left.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-right.reveal {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity var(--duration-smooth) var(--easing-default),
+              transform var(--duration-smooth) var(--easing-default);
+}
+
+.hero-right.reveal.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-left.reveal,
+  .hero-right.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ==================== Tablet Responsive (769px - 1024px) ==================== */
+
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column-reverse;
+    padding: var(--spacing-md) var(--spacing-lg);
+    gap: var(--spacing-lg);
+    min-height: auto;
+  }
+
+  .hero::before {
+    width: 600px;
+    height: 600px;
+  }
+
+  .hero-left {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .hero-left p {
+    margin: 0 auto;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    gap: var(--spacing-sm);
+  }
+
+  .hero-right {
+    min-height: 350px;
+    max-width: 100%;
+  }
+
+  .infinity-container {
+    max-width: 400px;
+    height: 300px;
+  }
+
+  .infinity-wrap {
+    transform: scale(0.8);
+  }
+}
+
+/* ==================== Mobile Responsive (≤768px) ==================== */
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: var(--spacing-md) var(--spacing-md);
+    gap: var(--spacing-lg);
+    min-height: auto;
+  }
+
+  .hero::before {
+    width: 400px;
+    height: 400px;
+  }
+
+  .hero-left {
+    max-width: 100%;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+
+  .hero-left h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  .hero-left p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .hero-right {
+    width: 100%;
+    min-height: 280px;
+    order: -1;
+  }
+
+  .infinity-container {
+    max-width: 100%;
+    height: 250px;
+  }
+
+  .infinity-wrap {
+    transform: scale(0.7);
+  }
+
+  .infinity-path {
+    max-width: 350px;
+    height: 250px;
+  }
+}
+
+/* ==================== Extra Small Mobile (≤480px) ==================== */
+
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .hero-left h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .hero-left p {
+    font-size: 0.95rem;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.95rem;
+  }
+
+  .hero-right {
+    min-height: 240px;
+  }
+
+  .infinity-container {
+    height: 200px;
+  }
+
+  .infinity-wrap {
+    transform: scale(0.65);
+  }
+}
