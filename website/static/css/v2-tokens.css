@@ -1,0 +1,98 @@
+:root {
+  color-scheme: dark;
+  font-family: 'Manrope', sans-serif;
+  font-feature-settings: 'cv02' on, 'cv03' on;
+
+  --font-sans: 'Manrope', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  --bg-900: #030518;
+  --bg-850: #070d22;
+  --bg-800: #0b1740;
+  --bg-750: #111f53;
+  --surface: rgba(12, 21, 48, 0.70);
+  --surface-strong: rgba(11, 19, 39, 0.92);
+  --surface-soft: rgba(14, 24, 56, 0.48);
+  --surface-border: rgba(158, 181, 255, 0.14);
+  --surface-ring: rgba(24, 220, 255, 0.12);
+  --border: rgba(114, 173, 255, 0.20);
+
+  --text-primary: #f4f7ff;
+  --text-muted: #9ab2db;
+  --text-soft: rgba(244, 247, 255, 0.72);
+  --primary: #5ef0ff;
+  --primary-soft: rgba(94, 240, 255, 0.18);
+  --accent: #8f62ff;
+  --accent-soft: rgba(143, 98, 255, 0.16);
+  --success: #84ffa3;
+  --shadow-glow: 0 28px 90px rgba(8, 29, 72, 0.28);
+  --shadow-card: 0 24px 70px rgba(0, 0, 0, 0.24);
+
+  --radius-sm: 18px;
+  --radius: 28px;
+  --radius-lg: 42px;
+  --radius-pill: 999px;
+
+  --spacing-xxs: 0.4rem;
+  --spacing-xs: 0.75rem;
+  --spacing-sm: 1.25rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4.5rem;
+  --spacing-xxl: 6rem;
+
+  --duration-fast: 180ms;
+  --duration-base: 320ms;
+  --duration-smooth: 520ms;
+  --easing-default: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--text-primary);
+  background: radial-gradient(circle at top left, rgba(94, 240, 255, 0.10), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(143, 98, 255, 0.14), transparent 26%),
+    linear-gradient(180deg, var(--bg-850) 0%, var(--bg-900) 58%, #02050f 100%);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
