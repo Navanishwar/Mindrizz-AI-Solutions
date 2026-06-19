@@ -58,7 +58,7 @@
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 0;
+  margin: 0 0 var(--spacing-md) 0;
 }
 
 .hero-left h1 .gradient {
@@ -88,9 +88,9 @@
 .hero-left p {
   font-family: var(--font-sans);
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-soft);
-  margin: 0;
+  margin: 0 0 var(--spacing-lg) 0;
   max-width: 550px;
 }
 
@@ -99,51 +99,64 @@
 .hero-buttons {
   display: flex;
   gap: var(--spacing-md);
-  margin-top: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
   flex-wrap: wrap;
+  align-items: center;
 }
 
-/* Primary CTA Button */
+/* Primary CTA Button - Strong Hierarchy */
 .cta-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: 0.875rem 2.5rem;
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
   color: #000;
   border: none;
   border-radius: var(--radius-pill);
   font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: transform var(--duration-base) var(--easing-default),
               box-shadow var(--duration-base) var(--easing-default);
-  box-shadow: 0 0 24px rgba(94, 240, 255, 0.24);
+  box-shadow: 0 0 32px rgba(94, 240, 255, 0.32);
   text-decoration: none;
+  position: relative;
+}
+
+.cta-primary::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--easing-default);
 }
 
 .cta-primary:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 0 32px rgba(94, 240, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 0 48px rgba(94, 240, 255, 0.48);
 }
 
 .cta-primary:active {
-  transform: translateY(0) scale(0.98);
+  transform: translateY(-1px);
 }
 
-/* Secondary CTA Button */
+/* Secondary CTA Button - Subtle, Supporting */
 .cta-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: 0.875rem 2.5rem;
   background: transparent;
   color: var(--text-primary);
-  border: 2px solid var(--primary);
+  border: 2px solid rgba(94, 240, 255, 0.5);
   border-radius: var(--radius-pill);
   font-family: var(--font-display);
   font-size: 1rem;
@@ -152,14 +165,16 @@
   cursor: pointer;
   transition: transform var(--duration-base) var(--easing-default),
               background var(--duration-base) var(--easing-default),
-              border-color var(--duration-base) var(--easing-default);
+              border-color var(--duration-base) var(--easing-default),
+              color var(--duration-base) var(--easing-default);
   text-decoration: none;
 }
 
 .cta-secondary:hover {
   transform: translateY(-2px);
-  background: rgba(94, 240, 255, 0.1);
-  border-color: var(--accent);
+  background: rgba(94, 240, 255, 0.08);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .cta-secondary:active {
@@ -177,99 +192,60 @@
   min-height: 500px;
 }
 
-/* ==================== Brain + Lightning Container ==================== */
+/* ==================== Brain + Lightning Brand Icon ==================== */
 
-.infinity-container {
+.hero-visual {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 300px;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  width: 400px;
   height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.infinity-container::before {
-  content: '';
-  position: absolute;
-  width: 600px;
-  height: 600px;
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(94, 240, 255, 0.12) 0%,
-    rgba(143, 98, 255, 0.06) 50%,
+    rgba(94, 240, 255, 0.15) 0%,
+    rgba(143, 98, 255, 0.08) 40%,
     transparent 70%
   );
   z-index: 0;
   pointer-events: none;
 }
 
-.infinity-wrap {
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(94, 240, 255, 0.08) 0%,
+    transparent 70%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.brand-icon {
   position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: scale(0.9);
-}
-
-.infinity-wrap::before {
-  content: '';
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(143, 98, 255, 0.08) 0%,
-    transparent 70%
-  );
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* ==================== Static Infinity Path (No Animation) ==================== */
-
-.infinity-path {
-  position: absolute;
-  width: 100%;
-  max-width: 500px;
-  height: 300px;
-  z-index: 1;
-}
-
-.infinity-path path {
-  stroke: url(#infinityGradient);
-  stroke-width: 3px;
-  stroke-linecap: round;
-  fill: none;
-  opacity: 0.8;
-}
-
-/* ==================== Static Orb (No Animation) ==================== */
-
-.orb {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
-  box-shadow: 0 0 12px rgba(94, 240, 255, 0.6),
-              inset 0 0 8px rgba(255, 255, 255, 0.3);
   z-index: 2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 20px rgba(94, 240, 255, 0.3));
+  transition: transform var(--duration-smooth) var(--easing-default),
+              filter var(--duration-smooth) var(--easing-default);
 }
 
-.orb-trail {
-  display: none;
-}
-
-.center-core {
-  display: none;
+.hero-visual:hover .brand-icon {
+  transform: scale(1.05) translateY(-5px);
+  filter: drop-shadow(0 0 32px rgba(94, 240, 255, 0.5));
 }
 
 /* ==================== Reveal Animation (from v2-components) ==================== */
@@ -333,13 +309,13 @@
   }
 
   .hero-left p {
-    margin: 0 auto;
+    margin: 0 auto var(--spacing-lg) auto;
     font-size: clamp(0.95rem, 2vw, 1.1rem);
   }
 
   .hero-buttons {
     justify-content: center;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
   }
 
   .hero-right {
@@ -347,13 +323,24 @@
     max-width: 100%;
   }
 
-  .infinity-container {
-    max-width: 400px;
+  .hero-visual {
+    max-width: 280px;
+    height: 340px;
+  }
+
+  .hero-visual::before {
+    width: 360px;
+    height: 360px;
+  }
+
+  .hero-visual::after {
+    width: 300px;
     height: 300px;
   }
 
-  .infinity-wrap {
-    transform: scale(0.8);
+  .brand-icon {
+    width: 180px;
+    height: 220px;
   }
 }
 
@@ -381,12 +368,13 @@
   .hero-left h1 {
     font-size: clamp(1.75rem, 5vw, 2.5rem);
     line-height: 1.2;
+    margin: 0 0 var(--spacing-sm) 0;
   }
 
   .hero-left p {
     font-size: 1rem;
     line-height: 1.5;
-    margin: 0 auto;
+    margin: 0 auto var(--spacing-md) auto;
     max-width: 100%;
   }
 
@@ -394,12 +382,14 @@
     flex-direction: column;
     width: 100%;
     justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
   }
 
   .cta-primary,
   .cta-secondary {
     width: 100%;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 0.875rem var(--spacing-md);
   }
 
   .hero-right {
@@ -408,18 +398,24 @@
     order: -1;
   }
 
-  .infinity-container {
-    max-width: 100%;
-    height: 250px;
+  .hero-visual {
+    max-width: 250px;
+    height: 300px;
   }
 
-  .infinity-wrap {
-    transform: scale(0.7);
+  .hero-visual::before {
+    width: 320px;
+    height: 320px;
   }
 
-  .infinity-path {
-    max-width: 350px;
-    height: 250px;
+  .hero-visual::after {
+    width: 280px;
+    height: 280px;
+  }
+
+  .brand-icon {
+    width: 160px;
+    height: 200px;
   }
 }
 
@@ -432,27 +428,45 @@
 
   .hero-left h1 {
     font-size: clamp(1.5rem, 4vw, 2rem);
+    margin: 0 0 var(--spacing-sm) 0;
   }
 
   .hero-left p {
     font-size: 0.95rem;
+    margin: 0 auto var(--spacing-md) auto;
   }
 
   .cta-primary,
   .cta-secondary {
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 0.75rem var(--spacing-md);
     font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    margin-top: var(--spacing-md);
   }
 
   .hero-right {
     min-height: 240px;
   }
 
-  .infinity-container {
-    height: 200px;
+  .hero-visual {
+    max-width: 220px;
+    height: 270px;
   }
 
-  .infinity-wrap {
-    transform: scale(0.65);
+  .hero-visual::before {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-visual::after {
+    width: 240px;
+    height: 240px;
+  }
+
+  .brand-icon {
+    width: 140px;
+    height: 180px;
   }
 }
