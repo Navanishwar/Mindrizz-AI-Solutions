@@ -865,7 +865,7 @@
   left: 37px;
 }
 
-.optimization {
+.ai-solution-icon.optimization {
   display: flex;
   align-items: flex-end;
   justify-content: center;

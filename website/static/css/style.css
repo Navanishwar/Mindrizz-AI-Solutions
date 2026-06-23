@@ -2370,3 +2370,13 @@ footer p{
     }
 }
 
+.services-grid .reveal {
+    height: 100%;
+}
+.services-grid .service-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
