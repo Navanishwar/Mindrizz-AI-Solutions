@@ -66,23 +66,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradientShift 6s ease-in-out infinite;
-}
-
-@keyframes gradientShift {
-  0%, 100% {
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    filter: hue-rotate(15deg);
-  }
-}
-
-/* Respect prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce) {
-  .hero-left h1 .gradient {
-    animation: none;
-  }
 }
 
 .hero-left p {
@@ -120,8 +103,7 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   cursor: pointer;
-  transition: transform var(--duration-base) var(--easing-default),
-              box-shadow var(--duration-base) var(--easing-default);
+  transition: transform var(--duration-base) var(--easing-default);
   box-shadow: 0 0 32px rgba(94, 240, 255, 0.32);
   text-decoration: none;
   position: relative;
@@ -140,7 +122,6 @@
 
 .cta-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 48px rgba(94, 240, 255, 0.48);
 }
 
 .cta-primary:active {
@@ -197,8 +178,8 @@
 .hero-visual {
   position: relative;
   width: 100%;
-  max-width: 300px;
-  height: 360px;
+  max-width: 360px;
+  height: 430px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,8 +188,8 @@
 .hero-visual::before {
   content: '';
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 480px;
+  height: 480px;
   border-radius: 50%;
   background: radial-gradient(
     circle,
@@ -223,8 +204,8 @@
 .hero-visual::after {
   content: '';
   position: absolute;
-  width: 320px;
-  height: 320px;
+  width: 384px;
+  height: 384px;
   border-radius: 50%;
   background: radial-gradient(
     circle,
@@ -238,14 +219,14 @@
 .brand-icon {
   position: relative;
   z-index: 2;
+  width: 245px;
+  height: 294px;
   filter: drop-shadow(0 0 20px rgba(94, 240, 255, 0.3));
-  transition: transform var(--duration-smooth) var(--easing-default),
-              filter var(--duration-smooth) var(--easing-default);
+  transition: transform var(--duration-smooth) var(--easing-default);
 }
 
 .hero-visual:hover .brand-icon {
   transform: scale(1.05) translateY(-5px);
-  filter: drop-shadow(0 0 32px rgba(94, 240, 255, 0.5));
 }
 
 /* ==================== Reveal Animation (from v2-components) ==================== */
