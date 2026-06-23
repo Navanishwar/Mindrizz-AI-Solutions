@@ -51,9 +51,26 @@
 
                 {% csrf_token %}
 
+                {% if form.errors %}
+                <div class="form-errors" style="color: #ef4444; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); padding: 15px; border-radius: 12px; margin-bottom: 20px; font-size: 0.95rem; text-align: left;">
+                    <strong style="display: block; margin-bottom: 8px;">Please correct the following errors:</strong>
+                    <ul style="margin: 0; padding-left: 20px;">
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
                 <input
                 type="text"
                 name="name"
+                value="{{ form.name.value|default:'' }}"
                 placeholder="Your Name"
                 required
                 >
@@ -61,6 +78,7 @@
                 <input
                 type="email"
                 name="email"
+                value="{{ form.email.value|default:'' }}"
                 placeholder="Business Email"
                 required
                 >
@@ -68,6 +86,7 @@
                 <input
                 type="text"
                 name="phone"
+                value="{{ form.phone.value|default:'' }}"
                 placeholder="Phone Number"
                 required
                 >
@@ -75,6 +94,7 @@
                 <input
                 type="text"
                 name="company"
+                value="{{ form.company.value|default:'' }}"
                 placeholder="Company Name"
                 required
                 >
@@ -84,7 +104,7 @@
                 rows="6"
                 placeholder="Tell us about your automation goals, challenges, or project requirements..."
                 required
-                ></textarea>
+                >{{ form.requirement.value|default:'' }}</textarea>
 
                 <button type="submit" class="btn">
 

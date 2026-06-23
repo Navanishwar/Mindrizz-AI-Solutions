@@ -2360,3 +2360,13 @@ footer p{
     transform:translateY(0);
 
 }
+
+@media (max-width: 768px) {
+    .contact-card, .contact-container {
+        padding: 24px !important;
+    }
+    .about-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
