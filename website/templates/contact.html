@@ -34,84 +34,104 @@
 <section class="contact-section">
     <div class="reveal">
         <div class="contact-card">
-            <h2>Let's Build Something Intelligent</h2>
-            <p class="contact-subtitle">
-                Have a project in mind? Let's discuss how we can leverage AI to transform your business.
-            </p>
-            <div class="contact-benefits">
-
-                <span>✓ Free Consultation</span>
-
-                <span>✓ Custom AI Strategy</span>
-
-                <span>✓ Fast Response</span>
-
-            </div>
-            <form method="POST" class="contact-form">
-
-                {% csrf_token %}
-
-                {% if form.errors %}
-                <div class="form-errors" style="color: #ef4444; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); padding: 15px; border-radius: 12px; margin-bottom: 20px; font-size: 0.95rem; text-align: left;">
-                    <strong style="display: block; margin-bottom: 8px;">Please correct the following errors:</strong>
-                    <ul style="margin: 0; padding-left: 20px;">
-                    {% for field in form %}
-                        {% for error in field.errors %}
-                            <li><strong>{{ field.label }}:</strong> {{ error }}</li>
-                        {% endfor %}
-                    {% endfor %}
-                    {% for error in form.non_field_errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                    </ul>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Let's Discuss Your Project</h2>
+                    <p class="contact-subtitle">
+                        Share your current workflows or manual tasks. We'll help you map out a practical automation plan with clear milestones and timelines.
+                    </p>
+                    
+                    <div class="trust-signals">
+                        <div class="trust-item">
+                            <span class="trust-icon" aria-hidden="true">⚡</span>
+                            <div>
+                                <h4>1-Day Response</h4>
+                                <p>We review your project details and get back to you within one business day.</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon" aria-hidden="true">🔒</span>
+                            <div>
+                                <h4>Confidentiality First</h4>
+                                <p>We sign standard NDAs before discussing any proprietary workflows or systems.</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon" aria-hidden="true">🛠️</span>
+                            <div>
+                                <h4>Direct Dev Access</h4>
+                                <p>Speak directly with developers who build systems, not sales representatives.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                {% endif %}
 
-                <input
-                type="text"
-                name="name"
-                value="{{ form.name.value|default:'' }}"
-                placeholder="Your Name"
-                required
-                >
+                <div class="contact-form-wrapper">
+                    <form method="POST" class="contact-form">
 
-                <input
-                type="email"
-                name="email"
-                value="{{ form.email.value|default:'' }}"
-                placeholder="Business Email"
-                required
-                >
+                        {% csrf_token %}
 
-                <input
-                type="text"
-                name="phone"
-                value="{{ form.phone.value|default:'' }}"
-                placeholder="Phone Number"
-                required
-                >
+                        {% if form.errors %}
+                        <div class="form-errors" style="color: #ef4444; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); padding: 15px; border-radius: 12px; margin-bottom: 20px; font-size: 0.95rem; text-align: left;">
+                            <strong style="display: block; margin-bottom: 8px;">Please correct the following errors:</strong>
+                            <ul style="margin: 0; padding-left: 20px;">
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
 
-                <input
-                type="text"
-                name="company"
-                value="{{ form.company.value|default:'' }}"
-                placeholder="Company Name"
-                required
-                >
+                        <input
+                        type="text"
+                        name="name"
+                        value="{{ form.name.value|default:'' }}"
+                        placeholder="Full Name"
+                        required
+                        >
 
-                <textarea
-                name="requirement"
-                rows="6"
-                placeholder="Tell us about your automation goals, challenges, or project requirements..."
-                required
-                >{{ form.requirement.value|default:'' }}</textarea>
+                        <input
+                        type="email"
+                        name="email"
+                        value="{{ form.email.value|default:'' }}"
+                        placeholder="Work Email"
+                        required
+                        >
 
-                <button type="submit" class="btn">
+                        <input
+                        type="text"
+                        name="phone"
+                        value="{{ form.phone.value|default:'' }}"
+                        placeholder="Direct Phone Number"
+                        required
+                        >
 
-                Book Free Consultation
+                        <input
+                        type="text"
+                        name="company"
+                        value="{{ form.company.value|default:'' }}"
+                        placeholder="Company Name"
+                        required
+                        >
 
-                </button>
-            </form>
+                        <textarea
+                        name="requirement"
+                        rows="6"
+                        placeholder="Describe your workflows, automation goals, or integration challenges..."
+                        required
+                        >{{ form.requirement.value|default:'' }}</textarea>
+
+                        <button type="submit" class="btn">
+                        Discuss Your Project
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </section>

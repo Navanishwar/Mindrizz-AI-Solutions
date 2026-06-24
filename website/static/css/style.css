@@ -2406,3 +2406,109 @@ footer p{
     min-height: 3.2rem;
 }
 
+/* =====================================================
+   CONTACT PAGE CONVERSION & TWO-COLUMN GRID
+===================================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.2fr;
+    gap: 60px;
+    align-items: stretch;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.contact-info h2 {
+    text-align: left !important;
+    font-size: 2.6rem !important;
+    margin-bottom: 20px;
+    background: var(--heading-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-info .contact-subtitle {
+    text-align: left !important;
+    margin: 0 0 45px 0 !important;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.trust-signals {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.trust-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.trust-icon {
+    font-size: 1.4rem;
+    background: rgba(0, 245, 255, 0.08);
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    border-radius: 12px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00f5ff;
+    flex-shrink: 0;
+}
+
+.trust-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 6px 0;
+}
+
+.trust-item p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contact-form-wrapper {
+    height: 100%;
+}
+
+.contact-form-wrapper .contact-form {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .contact-info h2 {
+        text-align: center !important;
+        font-size: 2.2rem !important;
+    }
+    
+    .contact-info .contact-subtitle {
+        text-align: center !important;
+        margin: 0 auto 40px auto !important;
+        max-width: 600px;
+    }
+    
+    .trust-signals {
+        max-width: 550px;
+        margin: 0 auto 20px auto;
+    }
+}
+
+
