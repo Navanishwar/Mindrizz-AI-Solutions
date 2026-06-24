@@ -2370,13 +2370,39 @@ footer p{
     }
 }
 
-.services-grid .reveal {
+/* =====================================================
+   GRID HEIGHT NORMALIZATION & TITLE ALIGNMENT
+===================================================== */
+.why-grid .reveal,
+.process-grid .reveal,
+.ai-solutions-grid .reveal,
+.industry-grid .reveal,
+.services-grid .reveal,
+.about-grid .reveal {
     height: 100%;
 }
-.services-grid .service-card {
+
+.why-grid .why-card,
+.process-grid .process-card,
+.ai-solutions-grid .ai-solution-card,
+.industry-grid .industry-card,
+.services-grid .service-card,
+.about-grid .about-card {
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
+.services-grid .service-card h3,
+.about-grid .about-card h3 {
+    min-height: 3.8rem;
+}
+
+.why-grid .why-card h3 {
+    min-height: 3.4rem;
+}
+
+.ai-solutions-grid .ai-solution-card h3 {
+    min-height: 3.2rem;
+}
 
