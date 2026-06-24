@@ -2,6 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealTargets = document.querySelectorAll('.reveal');
 
+  // Initialize stagger offsets inside card grids and process lists
+  const gridSelectors = [
+    '.why-grid',
+    '.process-grid',
+    '.ai-solutions-grid',
+    '.industry-grid',
+    '.services-grid',
+    '.about-grid',
+    '.deliverables-grid',
+    '.why-grid-2col'
+  ];
+
+  gridSelectors.forEach((selector) => {
+    const containers = document.querySelectorAll(selector);
+    containers.forEach((container) => {
+      const children = container.querySelectorAll(':scope > .reveal, :scope > * > .reveal');
+      children.forEach((child, index) => {
+        child.style.setProperty('--reveal-index', index);
+      });
+    });
+  });
+
   if (!prefersReducedMotion && revealTargets.length) {
     const observer = new IntersectionObserver(
       (entries, observerInstance) => {
@@ -13,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       },
       {
-        threshold: 0.18,
+        threshold: 0.15,
       }
     );
 
