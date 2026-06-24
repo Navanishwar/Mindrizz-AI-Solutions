@@ -44,6 +44,37 @@ document.addEventListener('DOMContentLoaded', () => {
     revealTargets.forEach((element) => element.classList.add('active'));
   }
 
+  // Spotlight Hover Mouse Tracker
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+  if (!isTouchDevice) {
+    const cardSelectors = [
+      '.why-card',
+      '.process-card',
+      '.why-item',
+      '.ai-solution-card',
+      '.industry-card',
+      '.service-card',
+      '.about-card',
+      '.deliverable-card'
+    ];
+
+    cardSelectors.forEach((selector) => {
+      const cards = document.querySelectorAll(selector);
+      cards.forEach((card) => {
+        card.addEventListener('mousemove', (e) => {
+          window.requestAnimationFrame(() => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+          });
+        });
+      });
+    });
+  }
+
   const logo = document.querySelector('.logo-mark');
   if (logo) {
     logo.addEventListener('mouseenter', () => logo.classList.add('logo-hover'));

@@ -2768,4 +2768,131 @@ p, .glass-card__copy {
     background-clip: text !important;
 }
 
+/* =====================================================
+   PHASE 5: ADVANCED MICRO-INTERACTIONS & SPOTLIGHT GLOWS
+===================================================== */
+
+/* Sliding Navbar Underlines */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--duration-base) var(--easing-default);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Mouse Coordinate Spotlight Cards Overlay */
+.why-card,
+.process-card,
+.why-item,
+.ai-solution-card,
+.industry-card,
+.service-card,
+.about-card,
+.deliverable-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Keep card content over spotlight element */
+.why-card > *,
+.process-card > *,
+.why-item > *,
+.ai-solution-card > *,
+.industry-card > *,
+.service-card > *,
+.about-card > *,
+.deliverable-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.why-card::before,
+.process-card::before,
+.why-item::before,
+.ai-solution-card::before,
+.industry-card::before,
+.service-card::before,
+.about-card::before,
+.deliverable-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        500px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+        rgba(94, 240, 255, 0.08),
+        transparent 80%
+    );
+    z-index: 1;
+    opacity: 0;
+    transition: opacity var(--duration-base) var(--easing-default);
+    pointer-events: none;
+}
+
+.why-card:hover::before,
+.process-card:hover::before,
+.why-item:hover::before,
+.ai-solution-card:hover::before,
+.industry-card:hover::before,
+.service-card:hover::before,
+.about-card:hover::before,
+.deliverable-card:hover::before {
+    opacity: 1;
+}
+
+/* Primary CTA Button Polish & Reflection Shimmer */
+.btn, .cta-primary, .cta-button.primary {
+    position: relative !important;
+    overflow: hidden !important;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background var(--duration-base) !important;
+}
+
+.btn:hover, .cta-primary:hover, .cta-button.primary:hover {
+    transform: scale(1.025) translateY(-1px) !important;
+}
+
+.btn:active, .cta-primary:active, .cta-button.primary:active {
+    transform: scale(0.975) translateY(0) !important;
+}
+
+/* Reflection Sweep Shimmer */
+.btn::after, .cta-primary::after, .cta-button.primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.75s ease;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.btn:hover::after, .cta-primary:hover::after, .cta-button.primary:hover::after {
+    left: 150%;
+}
+
 
